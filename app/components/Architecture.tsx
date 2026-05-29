@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -103,11 +104,12 @@ export default function Architecture() {
               className="relative overflow-hidden"
               style={{ aspectRatio: '4/3' }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/i/homepage/piece-heaven-left.jpg"
                 alt="Couple on balcony with hanging gardens"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 42vw"
                 draggable={false}
               />
             </div>
@@ -132,11 +134,12 @@ export default function Architecture() {
             className="relative w-full md:flex-1 overflow-hidden"
             style={{ minHeight: 'clamp(300px, 55vw, 680px)' }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/i/homepage/architecture-right.jpg"
               alt="Layan Verde bionic architecture render"
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 58vw"
               draggable={false}
             />
             {/* Subtle left fade into section bg */}
@@ -158,11 +161,12 @@ export default function Architecture() {
             className="relative w-full md:w-[55%] shrink-0 overflow-hidden"
             style={{ height: 'clamp(320px, 45vw, 580px)' }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/i/homepage/amenities-1.jpg"
               alt="Aerial view of the unique ecosystem landscape"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 55vw"
               draggable={false}
             />
             {/* Subtle right fade */}

@@ -46,6 +46,17 @@ export default function Header() {
   const mobileSheetRef = useRef<HTMLDivElement>(null);
   const mobileLinksRef = useRef<HTMLDivElement>(null);
 
+  // Close menu and reset frosted-glass on route change
+  useEffect(() => {
+    setMenuOpen(false);
+    const atTop = window.scrollY <= 100;
+    if (atTop) {
+      setScrolled(false);
+      scrolledRef.current = false;
+      gsap.to(bgRef.current, { width: '0%', duration: 0.3, ease: 'power3.inOut', overwrite: true });
+    }
+  }, [pathname]);
+
   // Initial states
   useEffect(() => {
     if (mobileSheetRef.current) gsap.set(mobileSheetRef.current, { y: '110%' });

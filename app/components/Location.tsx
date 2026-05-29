@@ -159,10 +159,11 @@ export default function Location() {
           <div ref={mapWrapRef} className="relative w-full max-w-[480px]">
 
             {/* Island map image */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/i/location/location-island.png"
               alt="Phuket island map"
+              width={480}
+              height={480}
               className="w-full h-auto"
               draggable={false}
             />

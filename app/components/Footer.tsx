@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -156,12 +157,12 @@ export default function Footer() {
           className="relative flex-1 min-h-[380px] md:min-h-0 block group overflow-hidden"
         >
           {/* Phuket island map image */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/footer-bg.webp"
             alt="Phuket map — Bang Tao Beach location"
-            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-           
+            fill
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="100vw"
             draggable={false}
           />
 

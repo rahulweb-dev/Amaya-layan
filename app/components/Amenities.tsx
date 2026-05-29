@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -141,12 +142,13 @@ export default function Amenities() {
         className="absolute left-0 top-0 bottom-0 w-[28%] md:w-[22%] z-0 pointer-events-none"
         style={{ transform: 'translateX(-100%)' }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           ref={imgLInner}
           src={ITEMS[0].imgL}
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="22vw"
           draggable={false}
         />
         {/* Fade out toward center */}
@@ -159,12 +161,13 @@ export default function Amenities() {
         className="absolute right-0 top-0 bottom-0 w-[28%] md:w-[22%] z-0 pointer-events-none"
         style={{ transform: 'translateX(100%)' }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           ref={imgRInner}
           src={ITEMS[0].imgR}
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="22vw"
           draggable={false}
         />
         {/* Fade out toward center */}

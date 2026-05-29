@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -103,11 +104,12 @@ export default function LocationSlider() {
                   style={{ height: 'clamp(380px, 50vw, 520px)' }}
                 >
                   {/* Background image */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={slide.img}
                     alt={slide.label}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    sizes="(max-width: 640px) 90vw, (max-width: 900px) 65vw, (max-width: 1200px) 42vw, 30vw"
                     draggable={false}
                   />
 

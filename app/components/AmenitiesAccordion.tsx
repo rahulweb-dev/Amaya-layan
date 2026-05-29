@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { amenities } from "@/data/amenities";
 
 export default function AmenitiesAccordion() {
@@ -37,16 +38,15 @@ export default function AmenitiesAccordion() {
           {active === index && (
             <div className="grid md:grid-cols-2 gap-12 pb-12">
 
-              <img
-                src={item.image}
-                alt={item.title}
-                className="
-                  w-full
-                  h-[500px]
-                  object-cover
-                  rounded-lg
-                "
-              />
+              <div className="relative h-[500px]">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
 
               <div className="flex flex-col justify-center">
 
