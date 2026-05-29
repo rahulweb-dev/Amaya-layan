@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
@@ -197,18 +198,17 @@ export default function Header() {
         <div className="md:hidden relative max-w-[1700px] mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
 
-            {/* Logo left */}
-            <div ref={mLogoRef} className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full border border-white text-white flex items-center justify-center shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                  <circle cx="12" cy="12" r="9.5" />
-                  <path d="M12 2.5c-2.5 3-4 5.8-4 9.5s1.5 6.5 4 9.5" />
-                  <path d="M12 2.5c2.5 3 4 5.8 4 9.5s-1.5 6.5-4 9.5" />
-                  <line x1="2.5" y1="12" x2="21.5" y2="12" />
-                </svg>
-              </div>
+            {/* Logo left — always white on mobile (transparent header) */}
+            <div ref={mLogoRef}>
               <Link href="/">
-                <span className="uppercase tracking-[0.25em] text-[13px] font-light text-white">LAYAN VERDE</span>
+                <Image
+                  src="/logos/Amaya_white_Logo.webp"
+                  alt="Amaya_white"
+                  width={200}
+                  height={100}
+                  className="h-56 w-auto object-contain"
+                  priority
+                />
               </Link>
             </div>
 
@@ -267,12 +267,25 @@ export default function Header() {
                 </button>
               </div>
 
-              {/* Center — Logo */}
+              {/* Center — Logo (white when transparent, black when scrolled) */}
               <div ref={dLogoRef} className="absolute left-1/2 -translate-x-1/2">
                 <Link href="/">
-                  <span className={`block uppercase tracking-[0.38em] text-lg md:text-[22px] font-light transition-colors duration-300 ${dText}`}>
-                    LAYAN VERDE
-                  </span>
+                  <div className="relative h-14 w-55">
+                    <Image
+                      src="/logos/Amaya_white_Logo.webp"
+                      alt="Layan Verde"
+                      fill
+                      className={`object-contain object-center transition-opacity duration-500 ${dDark ? 'opacity-0' : 'opacity-100'}`}
+                      priority
+                    />
+                    <Image
+                      src="/logos/Amaya_black_Logo.webp"
+                      alt=""
+                      fill
+                      className={`object-contain object-center transition-opacity duration-500 ${dDark ? 'opacity-100' : 'opacity-0'}`}
+                      priority
+                    />
+                  </div>
                 </Link>
               </div>
 

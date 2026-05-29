@@ -1,6 +1,7 @@
 'use client';
 
 import Footer from '../components/Footer';
+import ContactFormSection from '../components/ContactFormSection';
 
 export default function ContactsPage() {
   return (
@@ -99,6 +100,7 @@ export default function ContactsPage() {
         </div>
       </section>
 
+      <ContactFormSection />
       <Footer />
     </>
   );

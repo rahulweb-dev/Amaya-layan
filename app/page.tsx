@@ -6,6 +6,7 @@ import Location from './components/Location';
 import LocationSlider from './components/LocationSlider';
 import Amenities from './components/Amenities';
 import Footer from './components/Footer';
+import ContactFormSection from './components/ContactFormSection';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <LocationSlider />
       <Amenities />
       <Architecture />
+      <ContactFormSection />
       <Footer />
     </>
   );
