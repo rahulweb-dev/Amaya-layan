@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "./components/Header";
+import ClientLayout from "./components/ClientLayout";
 
 export const metadata = {
   title: "Layan Verde Clone",
@@ -14,8 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <ClientLayout>
+          <Header />
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );
