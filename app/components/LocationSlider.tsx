@@ -11,12 +11,12 @@ import 'swiper/css';
 gsap.registerPlugin(ScrollTrigger);
 
 const SLIDES = [
-  { num: '10', label: 'LAGUNA PHUKET',  img: '/i/location/location-gallery/1.jpg' },
-  { num: '20', label: 'PHUKET AIRPORT', img: '/i/location/location-gallery/2.jpg' },
-  { num: '2',  label: 'LAYAN BEACH',    img: '/i/location/location-gallery/3.jpg' },
-  { num: '5',  label: 'BOAT AVENUE',    img: '/i/location/location-gallery/4.jpg' },
-  { num: '15', label: 'BLUE TREE',      img: '/i/location/location-gallery/5.jpg' },
-  { num: '8',  label: 'BANG TAO BEACH', img: '/i/location/location-gallery/6.jpg' },
+  { num: '15', label: 'OUTER RING ROAD',   img: '/i/location/location-gallery/1.jpg' },
+  { num: '20', label: 'RAJIV GANDHI INTL', img: '/i/location/location-gallery/2.jpg' },
+  { num: '5',  label: 'MEDCHAL',           img: '/i/location/location-gallery/3.jpg' },
+  { num: '10', label: 'HITECH CITY',       img: '/i/location/location-gallery/4.jpg' },
+  { num: '25', label: 'HUSSAIN SAGAR',     img: '/i/location/location-gallery/5.jpg' },
+  { num: '30', label: 'SECUNDERABAD',      img: '/i/location/location-gallery/6.jpg' },
 ];
 
 export default function LocationSlider() {

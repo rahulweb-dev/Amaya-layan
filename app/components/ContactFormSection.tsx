@@ -35,19 +35,20 @@ export default function ContactFormSection() {
           {/* Heading block */}
           <div className="flex flex-col gap-5">
             <p className="text-white/30 text-[10px] uppercase tracking-[0.35em]">
-              Layan Verde — A Magical Place For The Real You
+              Amaya — A Calm Residential Community
             </p>
 
             <h2
-              className="text-white font-light uppercase leading-[1.05] tracking-[0.02em]"
+              className="text-white font-light leading-[1.05] tracking-[0.02em]"
               style={{ fontSize: 'clamp(2rem, 4.5vw, 3.8rem)' }}
             >
-              Become Part of<br />the History
+              Come and See It<br />for Yourself.
             </h2>
 
-            <p className="text-white/45 text-[10px] md:text-[11px] uppercase tracking-[0.18em] leading-[1.9] max-w-[460px]">
-              Share your contact details, and our manager will reach<br className="hidden md:block" />
-              out with full project details
+            <p className="text-white/55 text-[13px] md:text-[14px] font-light leading-[1.85] max-w-[460px]">
+              We would be happy to show you around the experience centre. Walk
+              through the model residence, clubhouse vision, and community plan
+              with our team.
             </p>
           </div>
 
@@ -125,7 +126,7 @@ export default function ContactFormSection() {
                 type="submit"
                 className="shrink-0 flex items-center justify-center gap-5 px-12 h-[54px] rounded-full bg-[#d9a898] text-[#021A13] uppercase text-[11px] tracking-[0.3em] hover:bg-[#c89585] active:bg-[#b8806f] transition-colors duration-300 min-w-[220px]"
               >
-                Send
+                Book a Visit
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                   <path d="M1 5H13M9 1L13 5L9 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

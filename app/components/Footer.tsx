@@ -38,10 +38,10 @@ export default function Footer() {
           {/* Phone + Schedule */}
           <div className="flex flex-col gap-[6px]">
             <a
-              href="tel:+6625660587"
+              href="tel:+919800098000"
               className="text-white font-light text-[clamp(1.6rem,2.5vw,2.2rem)] tracking-tight leading-none hover:text-white/80 transition-colors duration-300"
             >
-              +66 (2) 566-0587
+              +91 98000 98000
             </a>
             <a
               href="#"
@@ -51,28 +51,28 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Sales office hours */}
+          {/* Experience centre hours */}
           <div className="flex flex-col gap-[6px]">
             <h4 className="text-white text-[13px] uppercase tracking-[0.2em] mb-1">
-              Sales Office
+              Experience Centre
             </h4>
             <p className="text-white/55 text-[13px] font-light leading-[1.85]">
-              from 9:00 to 18:00 Phuket time,
-              <br />7 days a week
-              <br />Online – 24 hours a day
+              Monday to Saturday, 10:00 to 18:00
+              <br />Medchal, Hyderabad
+              <br />Online — 24 hours a day
             </p>
           </div>
 
           {/* Address */}
           <a
-            href="https://maps.google.com/?q=147/254+Moo+6+Cherngtalay,+Phuket"
+            href="https://maps.google.com/?q=Medchal,+Nehru+Outer+Ring+Road,+Hyderabad,+Telangana"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/65 text-[13px] font-light leading-[1.75] underline underline-offset-4 decoration-white/25 hover:text-white hover:decoration-white/50 transition-colors duration-300 w-fit"
           >
-            147/254 Moo 6 Cherngtalay Sub-District,
+            Medchal, Nehru Outer Ring Road,
             <br />
-            Thalang District, Phuket, Thailand 83110
+            Hyderabad, Telangana 500 055
           </a>
 
           {/* Social icons */}
@@ -111,10 +111,10 @@ export default function Footer() {
 
           {/* Email */}
           <a
-            href="mailto:info@villacartegroup.com"
+            href="mailto:hello@amaya.veravita.com"
             className="text-white/65 text-[13px] font-light underline underline-offset-4 decoration-white/25 hover:text-white hover:decoration-white/50 transition-colors duration-300 w-fit"
           >
-            info@villacartegroup.com
+            hello@amaya.veravita.com
           </a>
 
           {/* Legal links */}
@@ -130,27 +130,27 @@ export default function Footer() {
           {/* Legal disclaimer */}
           <div className="flex flex-col gap-3">
             <p className="text-white/25 text-[11px] font-light leading-[1.75] max-w-[380px]">
-              Project developer: &ldquo;Layan Best View Company Limited&rdquo;, registration
-              number: 0835564000196, registered address: 147/254 Moo 6 Cherngtalay
-              Sub-District, Thalang District, Phuket, Thailand 83110. Director: Paul Crosio.
+              Project developer: Vera Vita Developments Pvt. Ltd. RERA Registration
+              No. to be confirmed. Medchal, Nehru Outer Ring Road, Hyderabad,
+              Telangana 500 055.
             </p>
             <p className="text-white/25 text-[11px] font-light leading-[1.75] max-w-[380px]">
-              This is not a public offer. Visualizations and property layouts are approximate.
-              The developer reserves the right to make changes to the project in accordance
-              with applicable legislation.
+              This is not a public offer. Visualisations and floor plans are
+              indicative. The developer reserves the right to make changes to the
+              project in accordance with applicable legislation.
             </p>
           </div>
 
           {/* Copyright */}
           <p className="text-white/30 text-[12px] font-light mt-auto">
-            Layan Verde &copy; 2026 — All rights reserved.
+            Amaya &copy; 2026 — All rights reserved.
           </p>
         </div>
 
         {/* ── RIGHT — Static map image → opens Google Maps ── */}
         <a
           ref={mapRef}
-          href="https://maps.google.com/?q=Bang+Tao+Beach,+Phuket,+Thailand"
+          href="https://maps.google.com/?q=Medchal,+Hyderabad,+Telangana"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open location in Google Maps"
@@ -159,7 +159,7 @@ export default function Footer() {
           {/* Phuket island map image */}
           <Image
             src="/footer-bg.webp"
-            alt="Phuket map — Bang Tao Beach location"
+            alt="Hyderabad map — Amaya, Medchal location"
             fill
             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
             sizes="100vw"

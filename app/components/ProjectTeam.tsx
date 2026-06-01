@@ -9,38 +9,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TEAMS = [
   {
-    id: 'villacarte',
-    name: 'VILLACARTE GROUP',
-    company: 'VillaCarte Group',
-    role: 'The developer of the project',
+    id: 'veravita',
+    name: 'VERA VITA DEVELOPMENTS',
+    company: 'Vera Vita Developments Pvt. Ltd.',
+    role: 'Developer of Amaya',
     stats: [
-      '14 years of experience in Thailand',
-      '400+ people in a team',
-      '6 active business projects',
-      '3 properties in Phuket',
-      'One five-star hotel',
+      'Senior living specialists, Hyderabad',
+      'Purpose-built community for independent adults 55+',
+      'RERA registration in progress',
+      'Designed around community, care, and wellbeing',
+      'Located in Medchal, Nehru Outer Ring Road',
     ],
     projects: {
-      label: 'Notable Projects',
-      items: ['VillaCarte', 'Layan Green Park', 'La Vista Villas', 'LaGreen Hotel & Residence', 'Sabai Protocol'],
+      label: 'Key Highlights',
+      items: ['256 Residences planned', '34,000 sq ft Club Amaya', '600-Acre Reserve Forest adjoining', '100+ Curated Amenities (planned)'],
     },
     image: '/i/investment/management.jpg',
   },
   {
-    id: 'dusit',
-    name: 'DUSIT INTERNATIONAL',
-    company: 'Dusit International',
-    role: 'The hotel management company',
+    id: 'clubamaya',
+    name: 'CLUB AMAYA',
+    company: 'Club Amaya',
+    role: 'The community and wellness hub',
     stats: [
-      '70+ years of hospitality excellence',
-      '300+ hotels worldwide',
-      '15 countries of presence',
-      'Founded in Bangkok, 1948',
-      'Listed on the Stock Exchange of Thailand',
+      '34,000 sq ft of planned community space',
+      'Dining, wellness, creativity, and fitness',
+      'Library and reading rooms',
+      'Arts and activity studios',
+      'Performance and events hall',
     ],
     projects: {
-      label: 'Signature Brands',
-      items: ['Dusit Thani', 'ASAI Hotels', 'Dusit Princess', 'Dusit D2', 'Elite Havens'],
+      label: 'Clubhouse Spaces',
+      items: ['Dining and social spaces', 'Library and reading rooms', 'Wellness and therapy rooms', 'Fitness and movement spaces', 'Arts and activity studios'],
     },
     image: '/i/investment/la-green.jpg',
   },
@@ -117,19 +117,19 @@ export default function ProjectTeam() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-20 md:mb-28 items-start">
           <h2
             ref={headingRef}
-            className="text-white font-light uppercase leading-[1.02] tracking-[0.04em] text-center md:text-left"
+            className="text-white font-light leading-[1.02] tracking-[0.04em] text-center md:text-left"
             style={{ fontSize: 'clamp(2.2rem, 5vw, 5.2rem)' }}
           >
-            Uniting<br />Expertise<br />and Talent
+            The People<br />Behind<br />Amaya.
           </h2>
 
           <div ref={paraRef} className="flex items-center md:pt-4">
             <p className="text-white/55 font-light text-[14px] md:text-[15px] leading-[1.95] max-w-120 text-center md:text-left mx-auto md:mx-0">
-              Layan Verde is more than a project; it&apos;s a masterpiece inspired by
-              Phuket&apos;s natural beauty and cultural essence. Our team brings together
-              top architects, designers, and engineers — each a distinguished expert in
-              their field. We&apos;ve gathered the finest talents to create a landmark
-              that not only meets the highest standards but exceeds all expectations.
+              Amaya is thoughtfully conceived by Vera Vita Developments, a team of
+              senior living specialists dedicated to creating residential communities
+              where independence is beautifully supported. Every detail — from the
+              width of a doorway to the design of a common space — reflects a deep
+              commitment to ease, dignity, and quiet reassurance.
             </p>
           </div>
         </div>
@@ -141,12 +141,12 @@ export default function ProjectTeam() {
             className="text-white font-light leading-none"
             style={{ fontSize: 'clamp(2.6rem, 9vw, 10rem)' }}
           >
-            &gt;1&nbsp;000&nbsp;000{' '}
+            256{' '}
             <span
               className="font-light text-white/50 uppercase tracking-[0.12em]"
               style={{ fontSize: 'clamp(1rem, 2.5vw, 2.8rem)' }}
             >
-              sq.&nbsp;m.
+              Residences
             </span>
           </div>
           <p
@@ -154,7 +154,7 @@ export default function ProjectTeam() {
             className="text-white/40 uppercase tracking-[0.3em] mt-4"
             style={{ fontSize: 'clamp(0.65rem, 1.1vw, 0.85rem)' }}
           >
-            Constructed by Project Team
+            Planned at Amaya
           </p>
         </div>
       </div>
@@ -167,7 +167,7 @@ export default function ProjectTeam() {
         {/* Section label + top rule */}
         <div className="mb-0">
           <p className="text-white/40 text-[10px] uppercase tracking-[0.38em] mb-4">
-            Project Team
+            Behind Amaya
           </p>
           <div className="h-px bg-white/10" />
         </div>
@@ -246,7 +246,7 @@ export default function ProjectTeam() {
                           <span className="mt-1.5 w-1.25 h-1.25 rounded-full bg-white/20 shrink-0" />
                           <span
                             className="text-[13.5px] md:text-[14px] font-light leading-snug"
-                            style={{ color: '#7da87a', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+                            style={{ color: '#7da87a' }}
                           >
                             {p}
                           </span>

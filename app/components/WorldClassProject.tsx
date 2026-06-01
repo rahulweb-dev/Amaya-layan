@@ -8,20 +8,17 @@ import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 const SLIDES = [
-  { label: 'Nature',         src: '/i/homepage/piece-heaven-left.jpg' },
-  { label: 'Architecture',   src: '/i/homepage/architecture-right.jpg' },
-  { label: 'People',         src: '/i/homepage/amenities-1.jpg' },
-  { label: 'Infrastructure', src: '/i/invest/favorable-conditions-bg-1.jpg' },
+  { label: 'Community', src: '/i/homepage/piece-heaven-left.jpg' },
+  { label: 'Wellness',  src: '/i/homepage/architecture-right.jpg' },
+  { label: 'Nature',    src: '/i/homepage/amenities-1.jpg' },
+  { label: 'Spaces',    src: '/i/invest/favorable-conditions-bg-1.jpg' },
 ];
 
 const BULLETS = [
-  '200,000 m² of bionic architecture by Dewan',
-  '16,500+ m² of landscape design by SHMA',
-  '65+ world-class infrastructure amenities',
-  'Panoramic sea-view apartments',
-  'Up to 35% proven energy efficiency & sustainability with EDGE certification',
-  'Hotel management by the renowned Dusit brand',
-  '400+ industry professionals behind the project',
+  'Community by choice — neighbours who share your values, spaces that make connection natural',
+  'Care when needed, freedom always — support close, discreet, and designed around your life',
+  'Support close at hand — trained staff and everyday assistance are part of the community fabric',
+  'Reassurance built into everyday living — ease and dignity in every design decision',
 ];
 
 export default function WorldClassProject() {
@@ -121,19 +118,15 @@ export default function WorldClassProject() {
           ref={labelRef}
           className="text-center text-white/45 text-[11px] uppercase tracking-[0.35em] mb-10 md:mb-14"
         >
-          A World-Class Project
+          Why Amaya
         </p>
 
         {/* ── Big headline */}
         <h2
           ref={headlineRef}
-          className="text-center text-white uppercase font-light tracking-[0.1em] leading-[1.25] text-[clamp(1.2rem,2.4vw,3.8rem)] max-w-275 mx-auto mb-20 md:mb-28 xl:mb-36"
+          className="text-center text-white font-light tracking-[0.04em] leading-[1.2] text-[clamp(1.4rem,3.2vw,4.2rem)] max-w-275 mx-auto mb-20 md:mb-28 xl:mb-36"
         >
-          Layan Verde is a global masterpiece of bionic
-          architecture, set within an 8-hectare landscaped
-          park. Designed for both living and investment, it is
-          located in Bang&nbsp;Tao, Phuket&apos;s most sought-after
-          and rapidly developing district
+          Designed around a different idea of home.
         </h2>
 
         {/* ── Two-column body */}
@@ -196,20 +189,18 @@ export default function WorldClassProject() {
           {/* RIGHT — description */}
           <div ref={rightColRef} className="flex flex-col gap-8">
             <p className="text-white/65 font-light leading-[1.85] text-[14.5px] md:text-[15px]">
-              Layan Verde is set to become a new centerpiece of Phuket, joining
-              the island&apos;s most iconic developments. With its bionic
-              architecture, carefully designed green spaces, and uniquely crafted
-              apartments, it offers a perfect blend of elegance, comfort, and
-              sustainability. Certified by Advanced EDGE for energy efficiency,
-              Layan Verde is designed for those who seek a refined lifestyle in
-              harmony with nature and cutting-edge technology.
+              Thoughtful homes for easier everyday living. A place where the
+              rhythm of each day is yours to set, and where community, care,
+              and nature are simply close at hand.
             </p>
 
             <div>
               <p className="text-white font-light text-[14.5px] md:text-[15px] leading-[1.7] mb-5">
-                Layan Verde: a visionary concept
+                Not a facility. Not a resort. A residential community
                 <br />
-                unlike anything else in Phuket:
+                built for independence, with everything that makes
+                <br />
+                independence feel effortless:
               </p>
 
               <ul className="flex flex-col gap-[10px]">
@@ -224,7 +215,34 @@ export default function WorldClassProject() {
                 ))}
               </ul>
             </div>
+
+            {/* Promise quote */}
+            <p className="text-white/40 font-light text-[13px] md:text-[14px] italic leading-[1.7] border-l border-white/15 pl-5 mt-2">
+              &ldquo;A life that is social when you want it, and quiet when you need it.&rdquo;
+            </p>
           </div>
+        </div>
+
+        {/* ── Key stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 md:mt-28 pt-14 md:pt-16 border-t border-white/10">
+          {[
+            { num: '256',    label: 'Residences' },
+            { num: '34,000', label: 'sq ft Clubhouse (planned)' },
+            { num: '600',    label: 'Acre Reserve Forest' },
+            { num: '100+',   label: 'Curated Amenities (planned)' },
+          ].map(({ num, label }) => (
+            <div key={label} className="flex flex-col gap-2">
+              <div
+                className="text-white font-light leading-none"
+                style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3.5rem)' }}
+              >
+                {num}
+              </div>
+              <div className="text-white/40 text-[10px] md:text-[11px] uppercase tracking-[0.18em] leading-[1.6]">
+                {label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -127,7 +127,7 @@ export default function Loader() {
             ref={taglineRef}
             className="text-white/40 text-[9px] uppercase tracking-[0.35em] whitespace-nowrap font-light"
           >
-            Layan Verde
+            Senior Living
           </p>
           <div
             ref={lineRightRef}

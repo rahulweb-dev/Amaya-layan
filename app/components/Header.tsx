@@ -7,11 +7,13 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
-  { name: 'Home', href: '/' },
+  { name: 'Residences', href: '/residences' },
+  { name: 'Floor Plans', href: '/floor-plans' },
+  { name: 'Club Amaya', href: '/club-amaya' },
+  { name: 'Wellness', href: '/wellness' },
   { name: 'Location', href: '/location' },
-  { name: 'Investment', href: '/investment' },
-  { name: 'News', href: '/news' },
-  { name: 'Contacts', href: '/contacts' },
+  { name: 'Amenities', href: '/amenities' },
+  { name: 'Gallery', href: '/gallery' },
 ];
 
 export default function Header() {
@@ -231,7 +233,7 @@ export default function Header() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg>
               </a>
 
-              <a href="tel:+66761234567" aria-label="Call us"
+              <a href="tel:+919800098000" aria-label="Call us"
                 className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300 hover:bg-[#021A13] hover:border-[#021A13] hover:text-white ${dBorder} ${dText}`}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" /></svg>
               </a>
@@ -311,7 +313,7 @@ export default function Header() {
                 <button className={`flex items-center px-6 xl:px-8 h-10.5 xl:h-12.5 rounded-full uppercase text-xs xl:text-[13px] tracking-[0.18em] transition-all duration-300 ${
                   dDark ? 'bg-[#021A13] text-white hover:bg-[#0d3b28]' : 'bg-white text-[#021A13] hover:bg-white/90'
                 }`}>
-                  Get In Touch
+                  Book a Visit
                 </button>
               </div>
             </div>
@@ -376,7 +378,7 @@ export default function Header() {
                 <line x1="2.5" y1="12" x2="21.5" y2="12" />
               </svg>
             </div>
-            <span className="text-white/45 uppercase tracking-[0.3em] text-[10px] font-light">Layan Verde</span>
+            <span className="text-white/45 uppercase tracking-[0.3em] text-[10px] font-light">Amaya</span>
           </div>
 
           <nav ref={mobileLinksRef} className="px-7">
@@ -403,15 +405,15 @@ export default function Header() {
             <div className="flex gap-8 mb-5">
               <div>
                 <div className="text-white/25 text-[9px] uppercase tracking-[0.2em] mb-1">Phone</div>
-                <a href="tel:+66761234567" className="text-white/55 text-xs hover:text-white transition-colors">+66 76 123 456</a>
+                <a href="tel:+919800098000" className="text-white/55 text-xs hover:text-white transition-colors">+91 98000 98000</a>
               </div>
               <div>
                 <div className="text-white/25 text-[9px] uppercase tracking-[0.2em] mb-1">Email</div>
-                <a href="mailto:info@layanverde.com" className="text-white/55 text-xs hover:text-white transition-colors">info@layanverde.com</a>
+                <a href="mailto:hello@amaya.veravita.com" className="text-white/55 text-xs hover:text-white transition-colors">hello@amaya.veravita.com</a>
               </div>
             </div>
             <button className="w-full h-11 rounded-full bg-white text-[#021A13] uppercase text-[11px] tracking-[0.2em] active:bg-white/80 transition-colors duration-300">
-              Get In Touch
+              Book a Visit
             </button>
           </div>
         </div>

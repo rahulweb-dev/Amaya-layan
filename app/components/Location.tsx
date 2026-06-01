@@ -8,18 +8,18 @@ import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
-  { num: '2',  line1: 'Minutes', line2: 'To The Sea' },
-  { num: '10', line1: 'Minutes', line2: 'To Laguna Phuket' },
-  { num: '10', line1: 'Minutes', line2: 'To The Airport' },
+  { num: '15',  line1: 'Minutes',  line2: 'To Outer Ring Road' },
+  { num: '600', line1: 'Acre',     line2: 'Reserve Forest' },
+  { num: '100+', line1: 'Curated', line2: 'Amenities Planned' },
 ];
 
 const MAP_PINS = [
-  { id: 'airport',  label: 'AIRPORT',           x: 38, y: 14, side: 'left'  as const },
-  { id: 'aopo',     label: 'AO PO GRAND MARINA', x: 76, y: 28, side: 'right' as const },
-  { id: 'bangtao',  label: 'BANG TAO BEACH',     x: 26, y: 34, side: 'left'  as const, isMain: true },
-  { id: 'aqua',     label: 'AQUAPARK LAGUNA',     x: 26, y: 46, side: 'left'  as const },
-  { id: 'robinson', label: 'ROBINSON',            x: 72, y: 47, side: 'right' as const },
-  { id: 'phuket',   label: 'PHUKET TOWN',         x: 64, y: 76, side: 'right' as const },
+  { id: 'airport',  label: "RAJIV GANDHI INT'L",  x: 38, y: 14, side: 'left'  as const },
+  { id: 'hussain',  label: 'HUSSAIN SAGAR',        x: 76, y: 28, side: 'right' as const },
+  { id: 'medchal',  label: 'AMAYA, MEDCHAL',       x: 26, y: 34, side: 'left'  as const, isMain: true },
+  { id: 'orr',      label: 'OUTER RING ROAD',      x: 26, y: 46, side: 'left'  as const },
+  { id: 'hitech',   label: 'HITECH CITY',          x: 72, y: 47, side: 'right' as const },
+  { id: 'secun',    label: 'SECUNDERABAD',          x: 64, y: 76, side: 'right' as const },
 ];
 
 export default function Location() {
@@ -89,7 +89,7 @@ export default function Location() {
           <div className="relative h-[36%] md:h-[40%] shrink-0 overflow-hidden">
             <Image
               src="/i/location/location.webp"
-              alt="Bang Tao coastline aerial"
+              alt="Medchal reserve forest aerial"
               fill
               className="object-cover object-top"
               sizes="(max-width: 768px) 100vw, 42vw"
@@ -109,18 +109,17 @@ export default function Location() {
 
             {/* Heading */}
             <h2
-              className="loc-item text-white uppercase font-light leading-[1.05] tracking-[0.02em] mb-6 md:mb-8 text-48px"
+              className="loc-item text-white font-light leading-[1.05] tracking-[0.02em] mb-6 md:mb-8"
               style={{ fontSize: 'clamp(2rem, 4.2vw, 5rem)' }}
             >
-              The Island&apos;s Most<br />Desirable Area
+              Beside a 600-Acre<br />Reserve Forest.
             </h2>
 
             {/* Description */}
             <p className="loc-item text-white/55 font-light text-[14px] md:text-[15px] xl:text-[16px] leading-[1.85] max-w-120 xl:max-w-135 mb-10 md:mb-12">
-              Surrounded by elite properties with an annual appreciation rate of
-              10% and advanced European-standard infrastructure rated among the
-              highest: Michelin-starred restaurants, golf courses, tennis courts,
-              designer boutiques, a pristine beach, and more.
+              Adjacent to a 600-acre reserve forest in Medchal, around 15 minutes
+              from Nehru Outer Ring Road, Hyderabad. Nearby hospitals and essential
+              services. Easy access for visiting family.
             </p>
 
             {/* Stats */}
@@ -146,7 +145,7 @@ export default function Location() {
             {/* CTA */}
             <div className="loc-item">
               <button className="group flex items-center gap-5 px-10 xl:px-12 h-13.5 xl:h-15 rounded-full bg-[#d9a898] text-[#021A13] uppercase text-[11px] xl:text-[12px] tracking-[0.24em] hover:bg-[#c89585] transition-colors duration-300 font-normal">
-                Find Out More
+                See Location Details
                 <span className="text-base transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
             </div>
@@ -162,7 +161,7 @@ export default function Location() {
             {/* Map image */}
             <Image
               src="/i/location/location-en-map.png"
-              alt="Phuket island map"
+              alt="Hyderabad area map"
               width={820}
               height={820}
               className="w-full h-auto"
@@ -192,7 +191,7 @@ export default function Location() {
                 );
               })}
 
-              {/* Main Bang Tao line */}
+              {/* Main Medchal line */}
               <line
                 ref={el => { lineRefs.current[MAP_PINS.length] = el; }}
                 x1={mainPin.x} y1={mainPin.y}
@@ -231,7 +230,7 @@ export default function Location() {
               </div>
             ))}
 
-            {/* Pulsing marker — Bang Tao Beach */}
+            {/* Pulsing marker — Amaya, Medchal */}
             <div
               className="absolute"
               style={{
