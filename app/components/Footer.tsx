@@ -33,7 +33,7 @@ export default function Footer() {
         {/* ── LEFT — Contact & Legal ──────────────────────── */}
         <div
           ref={leftRef}
-          className="w-full md:w-[38%] shrink-0 flex flex-col gap-7 px-10 md:px-14 lg:px-16 py-14 md:py-16"
+          className="w-full md:w-[38%] shrink-0 flex flex-col gap-7 px-10 md:px-14 lg:px-16 xl:px-24 py-14 md:py-16 xl:py-24"
         >
           {/* Phone + Schedule */}
           <div className="flex flex-col gap-[6px]">

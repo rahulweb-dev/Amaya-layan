@@ -113,8 +113,8 @@ export default function WorldClassProject() {
   }, [activeLabel]);
 
   return (
-    <section ref={sectionRef} className="bg-[#021A13] py-20 md:py-28 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+    <section ref={sectionRef} className="bg-[#021A13] py-20 md:py-28 xl:py-36 overflow-hidden">
+      <div className="max-w-425 mx-auto px-5 sm:px-8 md:px-16 xl:px-24">
 
         {/* ── Section label */}
         <p
@@ -127,7 +127,7 @@ export default function WorldClassProject() {
         {/* ── Big headline */}
         <h2
           ref={headlineRef}
-          className="text-center text-white uppercase font-light tracking-[0.1em] leading-[1.25] text-[clamp(1.2rem,2.4vw,2.5rem)] max-w-[960px] mx-auto mb-20 md:mb-28"
+          className="text-center text-white uppercase font-light tracking-[0.1em] leading-[1.25] text-[clamp(1.2rem,2.4vw,3.8rem)] max-w-275 mx-auto mb-20 md:mb-28 xl:mb-36"
         >
           Layan Verde is a global masterpiece of bionic
           architecture, set within an 8-hectare landscaped
@@ -137,13 +137,13 @@ export default function WorldClassProject() {
         </h2>
 
         {/* ── Two-column body */}
-        <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-14 md:gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-14 md:gap-20 xl:gap-28 items-center">
 
           {/* LEFT — circular image autoplay */}
           <div ref={leftColRef} className="flex justify-center md:justify-start">
             <div
               className="relative rounded-full overflow-hidden"
-              style={{ width: 'min(460px, 85vw)', height: 'min(460px, 85vw)' }}
+              style={{ width: 'clamp(320px, 32vw, 620px)', height: 'clamp(320px, 32vw, 620px)' }}
             >
               {/* Slide frames */}
               {SLIDES.map((slide, i) => (

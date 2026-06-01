@@ -78,14 +78,14 @@ export default function Architecture() {
       {/* ════════════════════════════════════════════════
           SECTION 1 — IN HARMONY WITH NATURE
       ════════════════════════════════════════════════ */}
-      <section ref={sec1Ref} className="bg-[#021A13] pt-20 md:pt-28 overflow-hidden">
+      <section ref={sec1Ref} className="bg-[#021A13] pt-20 md:pt-28 xl:pt-36 overflow-hidden">
 
         {/* Heading ─ large, padded */}
-        <div className="max-w-[1700px] mx-auto px-8 md:px-16 mb-12 md:mb-16">
+        <div className="max-w-425 mx-auto px-5 sm:px-8 md:px-16 xl:px-24 mb-12 md:mb-16 xl:mb-20">
           <h2
             ref={headingRef}
-            className="text-white font-light uppercase leading-[0.95] tracking-[0.03em]"
-            style={{ fontSize: 'clamp(3rem, 8vw, 8.5rem)' }}
+            className="text-white font-light uppercase leading-[0.95] tracking-[0.03em] text-center md:text-left"
+            style={{ fontSize: 'clamp(2.2rem, 8vw, 8.5rem)' }}
           >
             In Harmony With
             <br />
@@ -97,7 +97,7 @@ export default function Architecture() {
         <div className="flex flex-col md:flex-row items-stretch">
 
           {/* LEFT: small image + text */}
-          <div className="w-full md:w-[42%] shrink-0 px-8 md:px-16 pb-12 md:pb-0 flex flex-col gap-8 justify-start">
+          <div className="w-full md:w-[42%] shrink-0 px-8 md:px-16 xl:px-24 pb-12 md:pb-0 flex flex-col gap-8 justify-start">
             {/* Small image */}
             <div
               ref={smallImgRef}
@@ -119,7 +119,7 @@ export default function Architecture() {
               <h3 className="text-white font-light uppercase tracking-[0.08em] text-[clamp(1.4rem,2.2vw,2.2rem)]">
                 Bionic Architecture
               </h3>
-              <p className="text-white/55 font-light text-[13.5px] md:text-[14.5px] leading-[1.85] max-w-[420px]">
+              <p className="text-white/55 font-light text-[13.5px] md:text-[14.5px] leading-[1.85] max-w-105">
                 In collaboration with Dewan Architects, Layan Verde introduces a visionary
                 concept inspired by nature itself. Blending human ingenuity with the raw beauty
                 of the environment, the project embraces sustainability and energy efficiency to
@@ -143,7 +143,7 @@ export default function Architecture() {
               draggable={false}
             />
             {/* Subtle left fade into section bg */}
-            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#021A13] to-transparent" />
+            <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-[#021A13] to-transparent" />
           </div>
         </div>
       </section>
@@ -170,21 +170,21 @@ export default function Architecture() {
               draggable={false}
             />
             {/* Subtle right fade */}
-            <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#021A13] to-transparent" />
+            <div className="absolute inset-y-0 right-0 w-28 bg-linear-to-l from-[#021A13] to-transparent" />
           </div>
 
           {/* RIGHT: text content */}
           <div
             ref={ecoTextRef}
-            className="w-full md:flex-1 flex flex-col gap-6 px-8 md:px-16 lg:px-20 py-16 md:py-0"
+            className="w-full md:flex-1 flex flex-col gap-6 px-8 md:px-16 lg:px-20 xl:px-28 py-16 md:py-0"
           >
             <h2
-              className="text-white font-light uppercase tracking-[0.05em] leading-tight"
+              className="text-white font-light uppercase tracking-wider leading-tight"
               style={{ fontSize: 'clamp(1.8rem,3.5vw,3.6rem)' }}
             >
               Unique Ecosystem
             </h2>
-            <p className="text-white/55 font-light text-[13.5px] md:text-[14.5px] leading-[1.85] max-w-[440px]">
+            <p className="text-white/55 font-light text-[13.5px] md:text-[14.5px] leading-[1.85] max-w-110">
               Designed by SHMA, the landscape features over ten distinct recreational zones,
               each enhancing the natural surroundings and fostering a sense of tranquility
               and connection to nature.

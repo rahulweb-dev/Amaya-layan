@@ -134,7 +134,7 @@ export default function Amenities() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#021A13] overflow-hidden py-20 md:py-28 min-h-screen"
+      className="relative bg-[#021A13] overflow-hidden py-20 md:py-28 xl:py-36 min-h-screen"
     >
       {/* ── Side background images ───────────────────────── */}
       <div
@@ -152,7 +152,7 @@ export default function Amenities() {
           draggable={false}
         />
         {/* Fade out toward center */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#021A13]" />
+        <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-[#021A13]" />
         <div className="absolute inset-0 bg-[#021A13]/30" />
       </div>
 
@@ -171,12 +171,12 @@ export default function Amenities() {
           draggable={false}
         />
         {/* Fade out toward center */}
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#021A13]" />
+        <div className="absolute inset-0 bg-linear-to-l from-transparent via-transparent to-[#021A13]" />
         <div className="absolute inset-0 bg-[#021A13]/30" />
       </div>
 
       {/* ── Accordion list ───────────────────────────────── */}
-      <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-200 mx-auto px-6 text-center">
         {ITEMS.map((item, idx) => {
           const isActive = activeIdx === idx;
 
@@ -191,7 +191,7 @@ export default function Amenities() {
                 <h3
                   ref={(el) => { titleRefs.current[idx] = el; }}
                   className={`
-                    font-light uppercase tracking-[0.05em] leading-none text-center
+                    font-light uppercase tracking-wider leading-none text-center
                     transition-colors duration-500
                     text-[clamp(2rem,5vw,4.6rem)]
                     ${isActive
@@ -225,7 +225,7 @@ export default function Amenities() {
                   </p>
 
                   {/* Description */}
-                  <p className="text-white/60 text-[13.5px] md:text-[14.5px] font-light leading-[1.85] max-w-[520px] text-center">
+                  <p className="text-white/60 text-[13.5px] md:text-[14.5px] xl:text-[16px] font-light leading-[1.85] max-w-130 text-center">
                     {item.desc}
                   </p>
                 </div>

@@ -81,8 +81,8 @@ export default function LocationSlider() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#021A13] py-16 md:py-20 overflow-hidden">
-      <div className="relative max-w-[1700px] mx-auto px-6 md:px-10">
+    <section ref={sectionRef} className="bg-[#021A13] py-16 md:py-20 xl:py-28 overflow-hidden">
+      <div className="relative max-w-[1700px] mx-auto px-6 md:px-10 xl:px-16 2xl:px-20">
 
         <div ref={cardsRef}>
           <Swiper

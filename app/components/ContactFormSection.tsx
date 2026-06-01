@@ -27,10 +27,10 @@ export default function ContactFormSection() {
 
   return (
     <section className="relative bg-[#061A10] overflow-hidden">
-      <div className="flex flex-col md:flex-row">
+      <div className="max-w-425 mx-auto flex flex-col md:flex-row">
 
         {/* ── LEFT — heading + form ────────────────────────── */}
-        <div className="relative z-10 flex-1 flex flex-col justify-between gap-14 px-8 sm:px-12 md:px-16 py-16 md:py-20">
+        <div className="relative z-10 flex-1 flex flex-col justify-between gap-14 px-5 sm:px-10 md:px-16 xl:px-20 py-16 md:py-20 xl:py-28">
 
           {/* Heading block */}
           <div className="flex flex-col gap-5">
