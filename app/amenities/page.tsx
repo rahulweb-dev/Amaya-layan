@@ -65,7 +65,6 @@ function AccordionRow({
   idx,
   isActive,
   onToggle,
-
 }: {
   item: (typeof CATEGORIES)[number];
   idx: number;
@@ -88,7 +87,7 @@ function AccordionRow({
   }, [isActive]);
 
   return (
-    <div className="border-b border-white/[0.08]">
+    <div className="border-b border-stone/40">
       <button
         onClick={() => onToggle(idx)}
         className="w-full group py-6 md:py-7 cursor-pointer text-center"
@@ -96,7 +95,7 @@ function AccordionRow({
       >
         <h3
           className={`font-light uppercase tracking-wider leading-none text-center transition-colors duration-500 ${
-            isActive ? 'text-[#d9a898]' : 'text-white/75 group-hover:text-white'
+            isActive ? 'text-brass' : 'text-navy/75 group-hover:text-navy'
           }`}
           style={{ fontSize: 'clamp(2rem, 5vw, 5rem)' }}
         >
@@ -108,21 +107,21 @@ function AccordionRow({
         <div className="pb-10 pt-1 flex flex-col items-center gap-5 max-w-2xl mx-auto text-center">
           <button
             onClick={() => onToggle(idx)}
-            className="text-white/25 text-sm hover:text-white/50 transition-colors duration-200"
+            className="text-charcoal/30 text-sm hover:text-charcoal/55 transition-colors duration-200"
             aria-label="Collapse"
           >
             ×
           </button>
-          <p className="text-white/35 text-[10px] md:text-[11px] uppercase tracking-[0.3em]">
+          <p className="text-charcoal/40 text-[10px] md:text-[11px] uppercase tracking-[0.3em]">
             {item.subtitle}
           </p>
-          <p className="text-white/55 text-[13.5px] md:text-[15px] font-light leading-[1.9] max-w-xl">
+          <p className="text-charcoal/60 text-[13.5px] md:text-[15px] font-light leading-[1.9] max-w-xl">
             {item.desc}
           </p>
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-2">
             {item.items.map((i) => (
-              <li key={i} className="flex items-center gap-2 text-white/40 text-[12px] font-light">
-                <span className="w-[3px] h-[3px] rounded-full bg-white/25" />
+              <li key={i} className="flex items-center gap-2 text-charcoal/45 text-[12px] font-light">
+                <span className="w-0.75 h-0.75 rounded-full bg-navy/25" />
                 {i}
               </li>
             ))}
@@ -186,7 +185,7 @@ export default function AmenitiesPage() {
   }, [activeIdx]);
 
   return (
-    <main className="bg-[#021A13]">
+    <main className="bg-surface">
 
       {/* HERO */}
       <PageHero
@@ -199,8 +198,8 @@ export default function AmenitiesPage() {
       />
 
       {/* STATS */}
-      <section ref={statsRef} className="py-16 md:py-20 border-b border-white/[0.07]">
-        <div className="max-w-[1500px] mx-auto px-6 md:px-16 xl:px-24">
+      <section ref={statsRef} className="py-16 md:py-20 border-b border-stone/40">
+        <div className="max-w-375 mx-auto px-6 md:px-16 xl:px-24">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {[
               { num: '100+', label: 'Planned amenities' },
@@ -209,10 +208,10 @@ export default function AmenitiesPage() {
               { num: '600', label: 'Acre reserve forest adjacent' },
             ].map(({ num, label }) => (
               <div key={label} className="amen-stat flex flex-col gap-2">
-                <div className="text-white font-light leading-none" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.8rem)' }}>
+                <div className="text-navy font-light leading-none" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.8rem)' }}>
                   {num}
                 </div>
-                <div className="text-white/35 text-[10px] uppercase tracking-[0.2em] leading-[1.7] mt-1">{label}</div>
+                <div className="text-charcoal/40 text-[10px] uppercase tracking-[0.2em] leading-[1.7] mt-1">{label}</div>
               </div>
             ))}
           </div>
@@ -238,8 +237,8 @@ export default function AmenitiesPage() {
             className="object-cover"
             sizes="20vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#021A13]" />
-          <div className="absolute inset-0 bg-[#021A13]/25" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-surface" />
+          <div className="absolute inset-0 bg-surface/20" />
         </div>
 
         <div
@@ -255,28 +254,28 @@ export default function AmenitiesPage() {
             className="object-cover"
             sizes="20vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#021A13]" />
-          <div className="absolute inset-0 bg-[#021A13]/25" />
+          <div className="absolute inset-0 bg-linear-to-l from-transparent via-transparent to-surface" />
+          <div className="absolute inset-0 bg-surface/20" />
         </div>
 
         {/* Header */}
         <div ref={headerRef} className="relative z-10 text-center mb-12 md:mb-16 px-6">
-          <p className="text-white/35 text-[11px] uppercase tracking-[0.38em] mb-5">
+          <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.38em] mb-5">
             100+ Planned Amenities
           </p>
           <h2
-            className="text-white font-light tracking-[0.025em] leading-[1.1]"
+            className="text-navy font-light tracking-wide leading-[1.1]"
             style={{ fontSize: 'clamp(1.8rem, 3.5vw, 4.2rem)' }}
           >
             Six categories. Endless daily comfort.
           </h2>
-          <p className="text-white/40 font-light text-[13px] md:text-[14px] leading-[1.85] max-w-sm mx-auto mt-4">
+          <p className="text-charcoal/45 font-light text-[13px] md:text-[14px] leading-[1.85] max-w-sm mx-auto mt-4">
             Tap any category to expand.
           </p>
         </div>
 
         {/* Accordion rows */}
-        <div className="relative z-10 max-w-[860px] mx-auto px-6">
+        <div className="relative z-10 max-w-215 mx-auto px-6">
           {CATEGORIES.map((cat, idx) => (
             <AccordionRow
               key={cat.title}
@@ -294,12 +293,12 @@ export default function AmenitiesPage() {
       </section>
 
       {/* FULL AMENITY GRID */}
-      <section className="py-20 md:py-32 bg-[#030e09]">
-        <div className="max-w-[1500px] mx-auto px-6 md:px-16 xl:px-24">
+      <section className="py-20 md:py-32 bg-surface-alt">
+        <div className="max-w-375 mx-auto px-6 md:px-16 xl:px-24">
           <div className="text-center mb-14 md:mb-18">
-            <p className="text-white/35 text-[11px] uppercase tracking-[0.4em] mb-5">All Categories</p>
+            <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em] mb-5">All Categories</p>
             <h2
-              className="text-white font-light"
+              className="text-navy font-light"
               style={{ fontSize: 'clamp(1.6rem, 3vw, 3.5rem)' }}
             >
               Everything at a glance.
@@ -310,19 +309,19 @@ export default function AmenitiesPage() {
             {CATEGORIES.map((cat) => (
               <div
                 key={cat.title}
-                className="flex flex-col gap-5 p-8 border border-white/[0.07] hover:border-white/18 transition-colors duration-400"
+                className="flex flex-col gap-5 p-8 border border-stone/40 hover:border-navy/20 transition-colors duration-300"
               >
                 <h3
-                  className="text-white font-light tracking-[0.02em]"
+                  className="text-navy font-light tracking-[0.02em]"
                   style={{ fontSize: 'clamp(1.2rem, 1.8vw, 1.5rem)' }}
                 >
                   {cat.title}
                 </h3>
-                <p className="text-white/40 text-[13px] font-light leading-[1.85]">{cat.desc}</p>
-                <ul className="flex flex-col gap-[8px] pt-4 border-t border-white/[0.07]">
+                <p className="text-charcoal/45 text-[13px] font-light leading-[1.85]">{cat.desc}</p>
+                <ul className="flex flex-col gap-2 pt-4 border-t border-stone/40">
                   {cat.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-white/40 text-[12.5px] font-light">
-                      <span className="mt-[6px] w-[3px] h-[3px] rounded-full bg-white/22 shrink-0" />
+                    <li key={item} className="flex items-start gap-3 text-charcoal/45 text-[12.5px] font-light">
+                      <span className="mt-1.5 w-0.75 h-0.75 rounded-full bg-navy/22 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -331,7 +330,7 @@ export default function AmenitiesPage() {
             ))}
           </div>
 
-          <p className="text-center text-white/20 text-[11px] font-light leading-[1.8] max-w-xl mx-auto mt-10">
+          <p className="text-center text-charcoal/28 text-[11px] font-light leading-[1.8] max-w-xl mx-auto mt-10">
             All amenities are planned. Details and availability are subject to final confirmation.
           </p>
         </div>
@@ -339,21 +338,21 @@ export default function AmenitiesPage() {
 
       {/* CTA */}
       <section ref={ctaRef} className="py-28 md:py-44 px-6 text-center">
-        <p className="text-white/35 text-[11px] uppercase tracking-[0.4em] mb-6">Explore More</p>
+        <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em] mb-6">Explore More</p>
         <h2
-          className="text-white font-light leading-[1.1] mb-8 max-w-2xl mx-auto"
+          className="text-navy font-light leading-[1.1] mb-8 max-w-2xl mx-auto"
           style={{ fontSize: 'clamp(1.8rem, 3.8vw, 4.5rem)' }}
         >
           See the amenities in person.
         </h2>
-        <p className="text-white/50 text-[14px] md:text-[15px] leading-[1.85] max-w-[440px] mx-auto mb-12">
+        <p className="text-charcoal/55 text-[14px] md:text-[15px] leading-[1.85] max-w-110 mx-auto mb-12">
           Visit our experience centre in Medchal to get a full feel for the planned amenities and community spaces.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="flex items-center gap-3 px-10 h-[52px] rounded-full bg-[#d9a898] text-[#021A13] uppercase text-[11px] tracking-[0.24em] hover:bg-[#c89585] transition-colors duration-300">
+          <button className="flex items-center gap-3 px-10 h-13 rounded-full bg-brass text-white uppercase text-[11px] tracking-[0.24em] hover:bg-[#967043] transition-colors duration-300">
             Book a Visit
           </button>
-          <button className="flex items-center gap-3 px-10 h-[52px] rounded-full border border-white/25 text-white/65 uppercase text-[11px] tracking-[0.24em] hover:border-white/50 hover:text-white transition-colors duration-300">
+          <button className="flex items-center gap-3 px-10 h-13 rounded-full border border-navy/25 text-charcoal/65 uppercase text-[11px] tracking-[0.24em] hover:border-navy/50 hover:text-navy transition-colors duration-300">
             Download Brochure
           </button>
         </div>

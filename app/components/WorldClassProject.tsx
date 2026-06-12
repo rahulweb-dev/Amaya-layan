@@ -22,67 +22,54 @@ const BULLETS = [
 ];
 
 export default function WorldClassProject() {
-  const sectionRef    = useRef<HTMLDivElement>(null);
-  const labelRef      = useRef<HTMLParagraphElement>(null);
-  const headlineRef   = useRef<HTMLHeadingElement>(null);
-  const leftColRef    = useRef<HTMLDivElement>(null);
-  const rightColRef   = useRef<HTMLDivElement>(null);
-  const slideNameRef  = useRef<HTMLSpanElement>(null);
+  const sectionRef   = useRef<HTMLDivElement>(null);
+  const labelRef     = useRef<HTMLParagraphElement>(null);
+  const headlineRef  = useRef<HTMLHeadingElement>(null);
+  const leftColRef   = useRef<HTMLDivElement>(null);
+  const rightColRef  = useRef<HTMLDivElement>(null);
+  const slideNameRef = useRef<HTMLSpanElement>(null);
 
-  const slideRefs     = useRef<(HTMLDivElement | null)[]>([]);
-  const currentIdx    = useRef(0);
-  const isAnimating   = useRef(false);
+  const slideRefs   = useRef<(HTMLDivElement | null)[]>([]);
+  const currentIdx  = useRef(0);
+  const isAnimating = useRef(false);
   const [activeLabel, setActiveLabel] = useState(SLIDES[0].label);
 
-  // ── ScrollTrigger entrance animations
   useEffect(() => {
     const ctx = gsap.context(() => {
       const ease = 'power3.out';
-
       gsap.from(labelRef.current, {
         y: 18, opacity: 0, duration: 0.9, ease,
         scrollTrigger: { trigger: sectionRef.current, start: 'top 78%' },
       });
-
       gsap.from(headlineRef.current, {
         y: 40, opacity: 0, duration: 1.2, ease,
         scrollTrigger: { trigger: sectionRef.current, start: 'top 72%' },
       });
-
       gsap.from(leftColRef.current, {
         x: -55, opacity: 0, duration: 1.1, ease,
         scrollTrigger: { trigger: leftColRef.current, start: 'top 80%' },
       });
-
       gsap.from(rightColRef.current, {
         x: 55, opacity: 0, duration: 1.1, ease, delay: 0.1,
         scrollTrigger: { trigger: rightColRef.current, start: 'top 80%' },
       });
     }, sectionRef);
-
     return () => ctx.revert();
   }, []);
 
-  // ── Autoplay slideshow — no stale closure, uses ref for current index
   useEffect(() => {
-    // Set initial state
     slideRefs.current.forEach((el, i) => {
       if (el) gsap.set(el, { opacity: i === 0 ? 1 : 0, zIndex: i === 0 ? 1 : 0 });
     });
-
     const id = setInterval(() => {
       if (isAnimating.current) return;
       isAnimating.current = true;
-
       const curr = currentIdx.current;
       const next = (curr + 1) % SLIDES.length;
       const currEl = slideRefs.current[curr];
       const nextEl = slideRefs.current[next];
-
       if (!currEl || !nextEl) { isAnimating.current = false; return; }
-
       gsap.set(nextEl, { opacity: 0, zIndex: 2 });
-
       const tl = gsap.timeline({
         onComplete: () => {
           gsap.set(currEl, { opacity: 0, zIndex: 0 });
@@ -92,53 +79,42 @@ export default function WorldClassProject() {
           isAnimating.current = false;
         },
       });
-
       tl.to(nextEl, { opacity: 1, duration: 1.4, ease: 'power2.inOut' });
     }, 3800);
-
     return () => clearInterval(id);
   }, []);
 
-  // ── Animate label text on slide change
   useEffect(() => {
     if (!slideNameRef.current) return;
-    gsap.fromTo(
-      slideNameRef.current,
+    gsap.fromTo(slideNameRef.current,
       { y: 12, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.55, ease: 'power2.out' }
     );
   }, [activeLabel]);
 
   return (
-    <section ref={sectionRef} className="bg-[#021A13] py-20 md:py-28 xl:py-36 overflow-hidden">
+    <section ref={sectionRef} className="bg-[#23384A] py-20 md:py-28 xl:py-36 overflow-hidden">
       <div className="max-w-425 mx-auto px-5 sm:px-8 md:px-16 xl:px-24">
 
-        {/* ── Section label */}
-        <p
-          ref={labelRef}
-          className="text-center text-white/45 text-[11px] uppercase tracking-[0.35em] mb-10 md:mb-14"
-        >
+        <p ref={labelRef} className="text-center text-white text-[11px] uppercase tracking-[0.35em] mb-10 md:mb-14">
           Why Amaya
         </p>
 
-        {/* ── Big headline */}
         <h2
           ref={headlineRef}
-          className="text-center text-white font-light tracking-[0.04em] leading-[1.2] text-[clamp(1.4rem,3.2vw,4.2rem)] max-w-275 mx-auto mb-20 md:mb-28 xl:mb-36"
+          className="text-center text-white font-light tracking-[0.03em] leading-[1.2] text-[clamp(1.4rem,3.2vw,4.2rem)] max-w-275 mx-auto mb-20 md:mb-28 xl:mb-36"
         >
           Designed around a different idea of home.
         </h2>
 
-        {/* ── Two-column body */}
         <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-14 md:gap-20 xl:gap-28 items-center">
 
           {/* LEFT — circular image autoplay */}
           <div ref={leftColRef} className="flex justify-center md:justify-start">
             <div
-              className="relative rounded-full overflow-hidden"
+              className="relative rounded-full overflow-hidden shadow-[0_20px_60px_rgba(35,56,74,0.12)]"
               style={{ width: 'clamp(320px, 32vw, 620px)', height: 'clamp(320px, 32vw, 620px)' }}
             >
-              {/* Slide frames */}
               {SLIDES.map((slide, i) => (
                 <div
                   key={slide.label}
@@ -146,39 +122,24 @@ export default function WorldClassProject() {
                   className="absolute inset-0"
                   style={{ opacity: 0, zIndex: 0 }}
                 >
-                  <Image
-                    src={slide.src}
-                    alt={slide.label}
-                    fill
-                    className="object-cover"
-                    sizes="460px"
-                    priority={i === 0}
-                  />
+                  <Image src={slide.src} alt={slide.label} fill className="object-cover" sizes="460px" priority={i === 0} />
                 </div>
               ))}
 
-              {/* Bottom vignette so label is legible */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-t from-navy-deep/60 via-transparent to-transparent z-10 pointer-events-none" />
 
-              {/* Category label */}
               <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center pb-10 z-20">
-                <span
-                  ref={slideNameRef}
-                  className="text-white uppercase tracking-[0.35em] text-sm md:text-base font-light"
-                >
+                <span ref={slideNameRef} className="text-white uppercase tracking-[0.35em] text-sm md:text-base font-light">
                   {activeLabel}
                 </span>
               </div>
 
-              {/* Progress dots */}
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-[6px] z-20">
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5 z-20">
                 {SLIDES.map((s) => (
                   <span
                     key={s.label}
                     className={`block rounded-full transition-all duration-500 ${
-                      s.label === activeLabel
-                        ? 'w-5 h-[3px] bg-white'
-                        : 'w-[3px] h-[3px] bg-white/40'
+                      s.label === activeLabel ? 'w-5 h-0.75 bg-limestone' : 'w-0.75 h-0.75 bg-limestone/40'
                     }`}
                   />
                 ))}
@@ -188,43 +149,37 @@ export default function WorldClassProject() {
 
           {/* RIGHT — description */}
           <div ref={rightColRef} className="flex flex-col gap-8">
-            <p className="text-white/65 font-light leading-[1.85] text-[14.5px] md:text-[15px]">
+            <p className="text-limestone/70 font-light leading-[1.85] text-[14.5px] md:text-[15px]">
               Thoughtful homes for easier everyday living. A place where the
               rhythm of each day is yours to set, and where community, care,
               and nature are simply close at hand.
             </p>
 
             <div>
-              <p className="text-white font-light text-[14.5px] md:text-[15px] leading-[1.7] mb-5">
+              <p className="text-limestone/85 font-light text-[14.5px] md:text-[15px] leading-[1.7] mb-5">
                 Not a facility. Not a resort. A residential community
-                <br />
-                built for independence, with everything that makes
-                <br />
-                independence feel effortless:
+                <br />built for independence, with everything that makes
+                <br />independence feel effortless:
               </p>
 
-              <ul className="flex flex-col gap-[10px]">
+              <ul className="flex flex-col gap-2.5">
                 {BULLETS.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="flex items-start gap-3 text-white/60 text-[13.5px] md:text-[14px] font-light leading-[1.65]"
-                  >
-                    <span className="mt-[8px] w-[5px] h-[5px] rounded-full bg-white/35 shrink-0" />
+                  <li key={bullet} className="flex items-start gap-3 text-limestone/60 text-[13.5px] md:text-[14px] font-light leading-[1.65]">
+                    <span className="mt-2 w-1.25 h-1.25 rounded-full bg-brass/60 shrink-0" />
                     {bullet}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Promise quote */}
-            <p className="text-white/40 font-light text-[13px] md:text-[14px] italic leading-[1.7] border-l border-white/15 pl-5 mt-2">
+            <p className="text-limestone/40 font-light text-[13px] md:text-[14px] italic leading-[1.7] border-l-2 border-brass/35 pl-5 mt-2">
               &ldquo;A life that is social when you want it, and quiet when you need it.&rdquo;
             </p>
           </div>
         </div>
 
-        {/* ── Key stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 md:mt-28 pt-14 md:pt-16 border-t border-white/10">
+        {/* Key stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 md:mt-28 pt-14 md:pt-16 border-t border-limestone/15">
           {[
             { num: '256',    label: 'Residences' },
             { num: '34,000', label: 'sq ft Clubhouse (planned)' },
@@ -232,13 +187,10 @@ export default function WorldClassProject() {
             { num: '100+',   label: 'Curated Amenities (planned)' },
           ].map(({ num, label }) => (
             <div key={label} className="flex flex-col gap-2">
-              <div
-                className="text-white font-light leading-none"
-                style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3.5rem)' }}
-              >
+              <div className="text-limestone font-light leading-none" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3.5rem)' }}>
                 {num}
               </div>
-              <div className="text-white/40 text-[10px] md:text-[11px] uppercase tracking-[0.18em] leading-[1.6]">
+              <div className="text-limestone/45 text-[10px] md:text-[11px] uppercase tracking-[0.18em] leading-[1.6]">
                 {label}
               </div>
             </div>

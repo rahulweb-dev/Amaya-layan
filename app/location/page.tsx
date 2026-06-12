@@ -46,7 +46,7 @@ export default function LocationPage() {
   }, []);
 
   return (
-    <main className="bg-[#021A13]">
+    <main className="bg-surface">
 
       {/* HERO */}
       <PageHero
@@ -62,11 +62,11 @@ export default function LocationPage() {
       <Location />
 
       {/* QUOTE BAND */}
-      <section ref={quoteRef} className="py-20 md:py-28 px-6 text-center border-y border-white/[0.07]">
-        <div className="max-w-[900px] mx-auto">
-          <p className="text-white/20 text-[11px] uppercase tracking-[0.45em] mb-7">The Amaya Setting</p>
+      <section ref={quoteRef} className="py-20 md:py-28 px-6 text-center border-y border-stone/40">
+        <div className="max-w-225 mx-auto">
+          <p className="text-charcoal/25 text-[11px] uppercase tracking-[0.45em] mb-7">The Amaya Setting</p>
           <blockquote
-            className="text-white font-light leading-[1.2] tracking-[0.025em]"
+            className="text-navy font-light leading-[1.2] tracking-wide"
             style={{ fontSize: 'clamp(1.5rem, 3.5vw, 4.2rem)' }}
           >
             &ldquo;The city is close when you want it, and invisible when you do not.&rdquo;
@@ -75,28 +75,28 @@ export default function LocationPage() {
       </section>
 
       {/* NEARBY GRID */}
-      <section ref={nearbyRef} className="py-24 md:py-36 px-6 md:px-16 xl:px-24 max-w-[1500px] mx-auto">
+      <section ref={nearbyRef} className="py-24 md:py-36 px-6 md:px-16 xl:px-24 max-w-375 mx-auto">
         <div className="text-center mb-14 md:mb-20">
-          <p className="text-white/35 text-[11px] uppercase tracking-[0.4em] mb-5">What&apos;s Nearby</p>
+          <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em] mb-5">What&apos;s Nearby</p>
           <h2
-            className="text-white font-light leading-[1.1]"
+            className="text-navy font-light leading-[1.1]"
             style={{ fontSize: 'clamp(1.8rem, 3.8vw, 4.5rem)' }}
           >
             Everything within reach.
           </h2>
-          <p className="text-white/45 font-light text-[14px] md:text-[15px] leading-[1.85] max-w-[480px] mx-auto mt-6">
+          <p className="text-charcoal/50 font-light text-[14px] md:text-[15px] leading-[1.85] max-w-120 mx-auto mt-6">
             Hospitals, essential services, family access, and the open forest — all within comfortable reach of Amaya.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-10">
           {NEARBY.map(({ category, items }) => (
-            <div key={category} className="nearby-col flex flex-col gap-5 border-t border-white/10 pt-7">
-              <h3 className="text-white/70 text-[11px] uppercase tracking-[0.35em] font-light">{category}</h3>
+            <div key={category} className="nearby-col flex flex-col gap-5 border-t border-stone/50 pt-7">
+              <h3 className="text-navy/75 text-[11px] uppercase tracking-[0.35em] font-light">{category}</h3>
               <ul className="flex flex-col gap-3">
                 {items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-white/50 text-[13px] font-light leading-[1.7]">
-                    <span className="mt-[7px] w-[3px] h-[3px] rounded-full bg-white/25 shrink-0" />
+                  <li key={item} className="flex items-start gap-3 text-charcoal/55 text-[13px] font-light leading-[1.7]">
+                    <span className="mt-1.75 w-0.75 h-0.75 rounded-full bg-navy/25 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -107,11 +107,11 @@ export default function LocationPage() {
       </section>
 
       {/* LOCATION GALLERY */}
-      <section ref={galleryRef} className="pb-20 md:pb-32 px-6 md:px-16 xl:px-24 max-w-[1500px] mx-auto">
+      <section ref={galleryRef} className="pb-20 md:pb-32 px-6 md:px-16 xl:px-24 max-w-375 mx-auto">
         <div className="text-center mb-10 md:mb-14">
-          <p className="text-white/35 text-[11px] uppercase tracking-[0.4em] mb-4">The Setting</p>
+          <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em] mb-4">The Setting</p>
           <h2
-            className="text-white font-light"
+            className="text-navy font-light"
             style={{ fontSize: 'clamp(1.6rem, 3vw, 3.5rem)' }}
           >
             Green, open, and unhurried.
@@ -140,7 +140,7 @@ export default function LocationPage() {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-navy/15 group-hover:bg-navy/5 transition-colors duration-500" />
             </div>
           ))}
         </div>
@@ -155,16 +155,16 @@ export default function LocationPage() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#021A13]/55" />
+        <div className="absolute inset-0 bg-navy/50" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 gap-5">
-          <p className="text-white/40 text-[11px] uppercase tracking-[0.45em]">The Forest</p>
+          <p className="text-limestone/50 text-[11px] uppercase tracking-[0.45em]">The Forest</p>
           <h2
-            className="text-white font-light leading-[1.1] max-w-3xl"
+            className="text-limestone font-light leading-[1.1] max-w-3xl"
             style={{ fontSize: 'clamp(1.6rem, 4vw, 5rem)' }}
           >
             600 acres of reserve forest.<br />Right next door.
           </h2>
-          <p className="text-white/50 font-light text-[14px] leading-[1.85] max-w-md">
+          <p className="text-limestone/55 font-light text-[14px] leading-[1.85] max-w-md">
             Morning walks, birdsong, open air. The forest is not a backdrop — it is a daily destination.
           </p>
         </div>
@@ -172,21 +172,21 @@ export default function LocationPage() {
 
       {/* CTA */}
       <section ref={ctaRef} className="py-28 md:py-44 px-6 text-center">
-        <p className="text-white/35 text-[11px] uppercase tracking-[0.4em] mb-6">Come and See</p>
+        <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em] mb-6">Come and See</p>
         <h2
-          className="text-white font-light leading-[1.1] mb-8 max-w-2xl mx-auto"
+          className="text-navy font-light leading-[1.1] mb-8 max-w-2xl mx-auto"
           style={{ fontSize: 'clamp(1.8rem, 3.8vw, 4.5rem)' }}
         >
           See the location for yourself.
         </h2>
-        <p className="text-white/50 text-[14px] md:text-[15px] leading-[1.85] max-w-[440px] mx-auto mb-12">
+        <p className="text-charcoal/55 text-[14px] md:text-[15px] leading-[1.85] max-w-110 mx-auto mb-12">
           Visit our experience centre in Medchal, Monday to Saturday, 10:00 to 18:00. The forest is five minutes on foot from the front entrance.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="flex items-center gap-3 px-10 h-[52px] rounded-full bg-[#d9a898] text-[#021A13] uppercase text-[11px] tracking-[0.24em] hover:bg-[#c89585] transition-colors duration-300">
+          <button className="flex items-center gap-3 px-10 h-13 rounded-full bg-brass text-white uppercase text-[11px] tracking-[0.24em] hover:bg-[#967043] transition-colors duration-300">
             Get Directions
           </button>
-          <button className="flex items-center gap-3 px-10 h-[52px] rounded-full border border-white/25 text-white/65 uppercase text-[11px] tracking-[0.24em] hover:border-white/50 hover:text-white transition-colors duration-300">
+          <button className="flex items-center gap-3 px-10 h-13 rounded-full border border-navy/25 text-charcoal/65 uppercase text-[11px] tracking-[0.24em] hover:border-navy/50 hover:text-navy transition-colors duration-300">
             Book a Visit
           </button>
         </div>

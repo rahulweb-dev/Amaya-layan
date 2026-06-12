@@ -13,7 +13,7 @@ export default function AmenitiesAccordion() {
       {amenities.map((item, index) => (
         <div
           key={item.title}
-          className="border-b border-[#2C5347]/20"
+          className="border-b border-stone/40"
         >
           <button
             onClick={() => setActive(index)}
@@ -26,11 +26,10 @@ export default function AmenitiesAccordion() {
               text-left
             "
           >
-            <h3 className="text-3xl md:text-5xl uppercase font-light">
+            <h3 className="text-3xl md:text-5xl uppercase font-light text-navy">
               {item.title}
             </h3>
-
-            <span className="text-3xl">
+            <span className="text-3xl text-charcoal/50">
               {active === index ? "−" : "+"}
             </span>
           </button>
@@ -49,15 +48,12 @@ export default function AmenitiesAccordion() {
               </div>
 
               <div className="flex flex-col justify-center">
-
-                <h4 className="text-2xl uppercase mb-4">
+                <h4 className="text-2xl uppercase mb-4 text-navy">
                   {item.subtitle}
                 </h4>
-
-                <p className="leading-8 text-lg">
+                <p className="leading-8 text-lg text-charcoal/65">
                   {item.description}
                 </p>
-
               </div>
 
             </div>

@@ -98,7 +98,7 @@ export default function WellnessPage() {
   }, []);
 
   return (
-    <main className="bg-[#021A13]">
+    <main className="bg-surface">
 
       {/* HERO */}
       <PageHero
@@ -111,22 +111,22 @@ export default function WellnessPage() {
       />
 
       {/* INTRO */}
-      <section className="py-20 md:py-32 px-6 md:px-16 xl:px-24 max-w-[1500px] mx-auto">
+      <section className="py-20 md:py-32 px-6 md:px-16 xl:px-24 max-w-375 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-12 md:gap-20 xl:gap-32 items-center">
           <div className="flex flex-col gap-7">
-            <p className="text-white/35 text-[11px] uppercase tracking-[0.4em]">Our Approach</p>
+            <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em]">Our Approach</p>
             <h2
-              className="text-white font-light leading-[1.1] tracking-[0.02em]"
+              className="text-navy font-light leading-[1.1] tracking-[0.02em]"
               style={{ fontSize: 'clamp(1.8rem, 3.5vw, 4rem)' }}
             >
               Independence feels<br />beautifully supported.
             </h2>
-            <p className="text-white/55 font-light text-[14px] md:text-[15px] leading-[1.9]">
+            <p className="text-charcoal/60 font-light text-[14px] md:text-[15px] leading-[1.9]">
               Wellness at Amaya is not a facility or a programme schedule pinned to a noticeboard.
               It is the way the community is designed, staffed, and managed — so that help is
               always available without anyone having to ask loudly for it.
             </p>
-            <p className="text-white/55 font-light text-[14px] md:text-[15px] leading-[1.9]">
+            <p className="text-charcoal/60 font-light text-[14px] md:text-[15px] leading-[1.9]">
               Every resident is different. Some will want daily fitness classes and an active social calendar.
               Others will want quiet days and good food. Amaya is built to accommodate both — simultaneously,
               without compromise.
@@ -146,12 +146,12 @@ export default function WellnessPage() {
       </section>
 
       {/* WELLNESS CATEGORIES */}
-      <section ref={catRef} className="py-20 md:py-32 bg-[#030e09]">
-        <div className="max-w-[1500px] mx-auto px-6 md:px-16 xl:px-24">
+      <section ref={catRef} className="py-20 md:py-32 bg-surface-alt">
+        <div className="max-w-375 mx-auto px-6 md:px-16 xl:px-24">
           <div className="text-center mb-14 md:mb-20">
-            <p className="text-white/35 text-[11px] uppercase tracking-[0.4em] mb-5">Six Categories</p>
+            <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em] mb-5">Six Categories</p>
             <h2
-              className="text-white font-light leading-[1.1]"
+              className="text-navy font-light leading-[1.1]"
               style={{ fontSize: 'clamp(1.8rem, 3.8vw, 4.5rem)' }}
             >
               Wellness in every dimension.
@@ -162,25 +162,25 @@ export default function WellnessPage() {
             {CATEGORIES.map((cat) => (
               <div
                 key={cat.num}
-                className="cat-card flex flex-col gap-5 p-8 md:p-10 border border-white/[0.07] hover:border-white/18 transition-colors duration-500 group"
+                className="cat-card flex flex-col gap-5 p-8 md:p-10 border border-stone/40 hover:border-navy/20 transition-colors duration-500 group"
               >
                 <div className="flex items-start justify-between">
-                  <span className="text-white/20 text-[11px] tracking-[0.35em]">{cat.num}</span>
+                  <span className="text-charcoal/25 text-[11px] tracking-[0.35em]">{cat.num}</span>
                 </div>
                 <div>
                   <h3
-                    className="text-white font-light leading-[1.2] tracking-[0.02em] mb-1.5"
+                    className="text-navy font-light leading-[1.2] tracking-[0.02em] mb-1.5"
                     style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.45rem)' }}
                   >
                     {cat.title}
                   </h3>
-                  <p className="text-[#d9a898]/60 text-[10px] uppercase tracking-[0.3em]">{cat.subtitle}</p>
+                  <p className="text-brass/70 text-[10px] uppercase tracking-[0.3em]">{cat.subtitle}</p>
                 </div>
-                <p className="text-white/50 font-light text-[13.5px] leading-[1.9]">{cat.desc}</p>
-                <ul className="flex flex-col gap-[8px] mt-auto pt-4 border-t border-white/[0.07]">
+                <p className="text-charcoal/55 font-light text-[13.5px] leading-[1.9]">{cat.desc}</p>
+                <ul className="flex flex-col gap-2 mt-auto pt-4 border-t border-stone/40">
                   {cat.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-white/40 text-[12.5px] font-light">
-                      <span className="mt-[6px] w-[3px] h-[3px] rounded-full bg-white/25 shrink-0" />
+                    <li key={item} className="flex items-start gap-3 text-charcoal/45 text-[12.5px] font-light">
+                      <span className="mt-1.5 w-0.75 h-0.75 rounded-full bg-navy/25 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -194,39 +194,39 @@ export default function WellnessPage() {
       {/* VERA VITA PRINCIPLES */}
       <section
         ref={principlesRef}
-        className="py-24 md:py-36 px-6 md:px-16 xl:px-24 max-w-[1500px] mx-auto"
+        className="py-24 md:py-36 px-6 md:px-16 xl:px-24 max-w-375 mx-auto"
       >
         <div className="text-center mb-14 md:mb-20">
-          <p className="text-white/35 text-[11px] uppercase tracking-[0.4em] mb-5">Vera Vita Operating Principles</p>
+          <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em] mb-5">Vera Vita Operating Principles</p>
           <h2
-            className="text-white font-light leading-[1.1]"
+            className="text-navy font-light leading-[1.1]"
             style={{ fontSize: 'clamp(1.8rem, 3.8vw, 4.5rem)' }}
           >
             The promise behind the place.
           </h2>
-          <p className="text-white/45 font-light text-[14px] md:text-[15px] leading-[1.85] max-w-lg mx-auto mt-6">
+          <p className="text-charcoal/50 font-light text-[14px] md:text-[15px] leading-[1.85] max-w-lg mx-auto mt-6">
             Vera Vita is the developer and long-term manager of Amaya. These are the operating principles that govern how the community is run.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {PRINCIPLES.map((p) => (
-            <div key={p.title} className="principle-block flex flex-col gap-5 border-t border-white/10 pt-8">
+            <div key={p.title} className="principle-block flex flex-col gap-5 border-t border-stone/50 pt-8">
               <h3
-                className="text-white font-light tracking-[0.02em]"
+                className="text-navy font-light tracking-[0.02em]"
                 style={{ fontSize: 'clamp(1.3rem, 2vw, 1.8rem)' }}
               >
                 {p.title}
               </h3>
-              <p className="text-white/50 font-light text-[14px] leading-[1.9]">{p.desc}</p>
+              <p className="text-charcoal/55 font-light text-[14px] leading-[1.9]">{p.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* STATS */}
-      <section ref={statsRef} className="py-16 md:py-24 border-y border-white/[0.07]">
-        <div className="max-w-[1500px] mx-auto px-6 md:px-16 xl:px-24">
+      <section ref={statsRef} className="py-16 md:py-24 border-y border-stone/40">
+        <div className="max-w-375 mx-auto px-6 md:px-16 xl:px-24">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {[
               { num: '24/7', label: 'On-site trained staff' },
@@ -235,10 +235,10 @@ export default function WellnessPage() {
               { num: '0', label: 'Institutional compromises' },
             ].map(({ num, label }) => (
               <div key={label} className="well-stat flex flex-col gap-2">
-                <div className="text-white font-light leading-none" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.8rem)' }}>
+                <div className="text-navy font-light leading-none" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.8rem)' }}>
                   {num}
                 </div>
-                <div className="text-white/35 text-[10px] uppercase tracking-[0.2em] leading-[1.7] mt-1">{label}</div>
+                <div className="text-charcoal/40 text-[10px] uppercase tracking-[0.2em] leading-[1.7] mt-1">{label}</div>
               </div>
             ))}
           </div>
@@ -254,16 +254,16 @@ export default function WellnessPage() {
           className="object-cover object-top"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#021A13]/60" />
+        <div className="absolute inset-0 bg-navy/55" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 gap-5">
-          <p className="text-white/40 text-[11px] uppercase tracking-[0.45em]">Nature as Wellness</p>
+          <p className="text-limestone/50 text-[11px] uppercase tracking-[0.45em]">Nature as Wellness</p>
           <h2
-            className="text-white font-light leading-[1.1] max-w-3xl"
+            className="text-limestone font-light leading-[1.1] max-w-3xl"
             style={{ fontSize: 'clamp(1.6rem, 4vw, 5rem)' }}
           >
             Beside a 600-acre<br />reserve forest.
           </h2>
-          <p className="text-white/50 font-light text-[14px] leading-[1.85] max-w-md">
+          <p className="text-limestone/55 font-light text-[14px] leading-[1.85] max-w-md">
             The forest is not a view. It is a daily destination — for morning walks, quiet sitting, and the particular kind of restoration that only comes from being among trees.
           </p>
         </div>
@@ -271,21 +271,21 @@ export default function WellnessPage() {
 
       {/* CTA */}
       <section ref={ctaRef} className="py-28 md:py-44 px-6 text-center">
-        <p className="text-white/35 text-[11px] uppercase tracking-[0.4em] mb-6">Learn More</p>
+        <p className="text-charcoal/40 text-[11px] uppercase tracking-[0.4em] mb-6">Learn More</p>
         <h2
-          className="text-white font-light leading-[1.1] mb-8 max-w-2xl mx-auto"
+          className="text-navy font-light leading-[1.1] mb-8 max-w-2xl mx-auto"
           style={{ fontSize: 'clamp(1.8rem, 3.8vw, 4.5rem)' }}
         >
           A life well lived, every day.
         </h2>
-        <p className="text-white/50 text-[14px] md:text-[15px] leading-[1.85] max-w-[440px] mx-auto mb-12">
+        <p className="text-charcoal/55 text-[14px] md:text-[15px] leading-[1.85] max-w-110 mx-auto mb-12">
           Speak to our team about how wellness and support work at Amaya. Visit the experience centre or request a brochure.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="flex items-center gap-3 px-10 h-[52px] rounded-full bg-[#d9a898] text-[#021A13] uppercase text-[11px] tracking-[0.24em] hover:bg-[#c89585] transition-colors duration-300">
+          <button className="flex items-center gap-3 px-10 h-13 rounded-full bg-brass text-white uppercase text-[11px] tracking-[0.24em] hover:bg-[#967043] transition-colors duration-300">
             Book a Visit
           </button>
-          <button className="flex items-center gap-3 px-10 h-[52px] rounded-full border border-white/25 text-white/65 uppercase text-[11px] tracking-[0.24em] hover:border-white/50 hover:text-white transition-colors duration-300">
+          <button className="flex items-center gap-3 px-10 h-13 rounded-full border border-navy/25 text-charcoal/65 uppercase text-[11px] tracking-[0.24em] hover:border-navy/50 hover:text-navy transition-colors duration-300">
             Download Brochure
           </button>
         </div>
