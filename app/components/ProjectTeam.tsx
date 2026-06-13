@@ -22,7 +22,7 @@ const TEAMS = [
     ],
     projects: {
       label: 'Key Highlights',
-      items: ['256 Residences planned', '34,000 sq ft Club Amaya', '600-Acre Reserve Forest adjoining', '100+ Curated Amenities (planned)'],
+      items: ['256 Residences planned', '34,000 sq ft Club Amaya', '700-Acre Reserve Forest adjoining', '100+ Curated Amenities (planned)'],
     },
     image: '/i/investment/management.jpg',
   },

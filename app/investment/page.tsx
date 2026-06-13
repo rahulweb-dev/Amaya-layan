@@ -35,7 +35,7 @@ export default function InvestmentPage() {
           {[
             { num: '256',    label: 'Planned Residences' },
             { num: '34,000', label: 'sq ft Club Amaya' },
-            { num: '600ac',  label: 'Reserve Forest Adjacent' },
+            { num: '700ac',  label: 'Reserve Forest Adjacent' },
           ].map(({ num, label }) => (
             <div key={label} className="flex flex-col items-center gap-2">
               <span

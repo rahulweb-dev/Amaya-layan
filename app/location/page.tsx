@@ -14,7 +14,7 @@ const NEARBY = [
   { category: 'Healthcare', items: ['Yashoda Hospitals — 12 km', 'Continental Hospitals — 14 km', 'Apollo Spectra — 10 km', 'Medchal Government Hospital — 3 km'] },
   { category: 'Education', items: ['ISB Hyderabad — 18 km', 'NALSAR University — 14 km', 'IIT Hyderabad — 22 km', 'International schools — 8–15 km'] },
   { category: 'Connectivity', items: ['Nehru Outer Ring Road — 15 min', 'Rajiv Gandhi Airport — 38 km', 'Secunderabad — 22 km', 'Hitech City — 18 km'] },
-  { category: 'Nature', items: ['600-acre reserve forest — adjacent', 'Medchal Lake — 4 km', 'Walking and jogging trails — on-site', 'Open green courtyards — throughout'] },
+  { category: 'Nature', items: ['700-acre reserve forest — adjacent', 'Medchal Lake — 4 km', 'Walking and jogging trails — on-site', 'Open green courtyards — throughout'] },
 ];
 
 export default function LocationPage() {
@@ -51,7 +51,7 @@ export default function LocationPage() {
       {/* HERO */}
       <PageHero
         label="Amaya — Location"
-        title="Beside a 600-acre reserve forest."
+        title="Beside a 700-acre reserve forest."
         description="Adjacent to protected forest in Medchal, 15 minutes from Nehru Outer Ring Road, Hyderabad. The city is close when you want it, invisible when you do not."
         imgSrc="/i/location/location.webp"
         imgAlt="Medchal reserve forest aerial — Amaya location"
@@ -162,7 +162,7 @@ export default function LocationPage() {
             className="text-limestone font-light leading-[1.1] max-w-3xl"
             style={{ fontSize: 'clamp(1.6rem, 4vw, 5rem)' }}
           >
-            600 acres of reserve forest.<br />Right next door.
+            700 acres of reserve forest.<br />Right next door.
           </h2>
           <p className="text-limestone/55 font-light text-[14px] leading-[1.85] max-w-md">
             Morning walks, birdsong, open air. The forest is not a backdrop — it is a daily destination.

@@ -183,7 +183,7 @@ export default function WorldClassProject() {
           {[
             { num: '256',    label: 'Residences' },
             { num: '34,000', label: 'sq ft Clubhouse (planned)' },
-            { num: '600',    label: 'Acre Reserve Forest' },
+            { num: '700',    label: 'Acre Reserve Forest' },
             { num: '100+',   label: 'Curated Amenities (planned)' },
           ].map(({ num, label }) => (
             <div key={label} className="flex flex-col gap-2">

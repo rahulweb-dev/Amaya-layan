@@ -261,7 +261,7 @@ export default function WellnessPage() {
             className="text-limestone font-light leading-[1.1] max-w-3xl"
             style={{ fontSize: 'clamp(1.6rem, 4vw, 5rem)' }}
           >
-            Beside a 600-acre<br />reserve forest.
+            Beside a 700-acre<br />reserve forest.
           </h2>
           <p className="text-limestone/55 font-light text-[14px] leading-[1.85] max-w-md">
             The forest is not a view. It is a daily destination — for morning walks, quiet sitting, and the particular kind of restoration that only comes from being among trees.

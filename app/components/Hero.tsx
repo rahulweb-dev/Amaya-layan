@@ -30,7 +30,7 @@ export default function Hero() {
           Where life finds <br />its perfect rhythm.
         </h1>
         <p className="text-[#E7D8C6]/70 text-center font-light text-[14px] md:text-[16px] leading-[1.8] max-w-[500px]">
-          Independent senior living by Vera Vita, designed around comfort,
+          Independent senior living by Vera Vita, designed for comfort,
           community, nature, and quiet reassurance.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">

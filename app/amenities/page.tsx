@@ -45,10 +45,10 @@ const CATEGORIES = [
   {
     title: 'Nature',
     subtitle: 'Green, open, and unhurried',
-    desc: 'Direct adjacency to a 600-acre reserve forest, walking and jogging trails, and reflective water bodies — open, green, and designed to move at a pace that suits you.',
+    desc: 'Direct adjacency to a 6700-acre reserve forest, walking and jogging trails, and reflective water bodies — open, green, and designed to move at a pace that suits you.',
     imgL: '/i/location/location.webp',
     imgR: '/i/homepage/piece-heaven-right.jpg',
-    items: ['600-acre reserve forest — adjacent', 'Walking and jogging trails', 'Reflective water features', 'Sensory garden', 'Landscaped courtyards', 'Bird-watching areas'],
+    items: ['700-acre reserve forest — adjacent', 'Walking and jogging trails', 'Reflective water features', 'Sensory garden', 'Landscaped courtyards', 'Bird-watching areas'],
   },
   {
     title: 'Hospitality',
@@ -205,7 +205,7 @@ export default function AmenitiesPage() {
               { num: '100+', label: 'Planned amenities' },
               { num: '6', label: 'Lifestyle categories' },
               { num: '34,000', label: 'sq ft Club Amaya (planned)' },
-              { num: '600', label: 'Acre reserve forest adjacent' },
+              { num: '700', label: 'Acre reserve forest adjacent' },
             ].map(({ num, label }) => (
               <div key={label} className="amen-stat flex flex-col gap-2">
                 <div className="text-navy font-light leading-none" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.8rem)' }}>

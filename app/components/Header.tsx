@@ -18,6 +18,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuOpenRef = useRef(false);
   const [scrolled, setScrolled] = useState(false);
   const scrolledRef = useRef(false);
   const pathname = usePathname();
@@ -67,24 +68,27 @@ export default function Header() {
       .from([dRightRef.current, mRightRef.current], { y: -35, opacity: 0, duration: 1.1 }, 0.2);
   }, []);
 
+  // Keep ref in sync so the scroll handler (registered once) reads live menuOpen value
+  useEffect(() => { menuOpenRef.current = menuOpen; }, [menuOpen]);
+
   useEffect(() => {
     const onScroll = () => {
       const past = window.scrollY > 100;
       if (past === scrolledRef.current) return;
       scrolledRef.current = past;
       setScrolled(past);
-      if (!menuOpen) {
-        gsap.to(bgRef.current, {
-          width: past ? '100%' : '0%',
-          duration: past ? 0.75 : 0.55,
-          ease: 'power3.inOut',
-          overwrite: true,
-        });
-      }
+      // When scrolling back to top, keep bg visible if menu is still open
+      const showBg = past || menuOpenRef.current;
+      gsap.to(bgRef.current, {
+        width: showBg ? '100%' : '0%',
+        duration: past ? 0.75 : 0.55,
+        ease: 'power3.inOut',
+        overwrite: true,
+      });
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, [menuOpen]);
+  }, []);
 
   const animateHamburger = (
     open: boolean,
@@ -149,6 +153,8 @@ export default function Header() {
       if (!subNav) return;
 
       if (menuOpen) {
+        // Show frosted bg immediately when menu opens
+        gsap.to(bgRef.current, { width: '100%', duration: 0.4, ease: 'power3.out', overwrite: true });
         const tl = gsap.timeline();
         tl.to(subNav, { height: 'auto', duration: 0.45, ease: 'power3.out' });
         if (linkItems?.length) {
@@ -159,6 +165,10 @@ export default function Header() {
           );
         }
       } else {
+        // Only hide bg on close if the page hasn't been scrolled past threshold
+        if (!scrolledRef.current) {
+          gsap.to(bgRef.current, { width: '0%', duration: 0.35, ease: 'power3.in', overwrite: true });
+        }
         const tl = gsap.timeline();
         if (linkItems?.length) {
           tl.to(linkItems, { y: -8, opacity: 0, duration: 0.2, stagger: 0.04, ease: 'power2.in' });
@@ -168,8 +178,8 @@ export default function Header() {
     }
   }, [menuOpen]);
 
-  // When scrolled: navy text on limestone glass. When transparent: white text.
-  const dDark = scrolled;
+  // When scrolled OR menu open: navy text on limestone glass. When transparent: white text.
+  const dDark = scrolled || menuOpen;
   const dText   = dDark ? 'text-[#23384A]' : 'text-white';
   const dBorder = dDark ? 'border-[#23384A]/30' : 'border-white/50';
 
@@ -309,9 +319,9 @@ export default function Header() {
           </div>
 
           {/* Sub-nav dropdown */}
-          <div ref={subNavRef} className="overflow-hidden" style={{ height: 0 }}>
-            <div className={`border-t px-6 md:px-10 py-[14px] ${scrolled ? 'border-[#D8CEC3]/50' : 'border-white/15'}`}>
-              <nav ref={subNavLinksRef} className="max-w-[1700px] mx-auto flex items-center gap-8 md:gap-10">
+          <div ref={subNavRef} className="overflow-x-hidden overflow-y-hidden" style={{ height: 0 }}>
+            <div className={`border-t px-6 md:px-10 xl:px-16 2xl:px-20 py-3.5 ${dDark ? 'border-stone/50' : 'border-white/15'}`}>
+              <nav ref={subNavLinksRef} className="max-w-[1700px] mx-auto flex items-center gap-4 md:gap-5 lg:gap-7 xl:gap-10 overflow-x-auto scrollbar-none">
                 {NAV_LINKS.map((link) => (
                   <Link
                     key={link.href}
@@ -319,13 +329,13 @@ export default function Header() {
                     onClick={() => setMenuOpen(false)}
                     className={`sub-link text-[11px] uppercase tracking-[0.2em] transition-colors duration-300 whitespace-nowrap relative pb-[3px] ${
                       pathname === link.href
-                        ? `font-medium ${scrolled ? 'text-[#23384A]' : 'text-white'}`
-                        : `${scrolled ? 'text-[#23384A]/45 hover:text-[#23384A]' : 'text-white/50 hover:text-white'}`
+                        ? `font-medium ${dDark ? 'text-navy' : 'text-white'}`
+                        : `${dDark ? 'text-navy/45 hover:text-navy' : 'text-white/50 hover:text-white'}`
                     }`}
                   >
                     {link.name}
                     {pathname === link.href && (
-                      <span className={`absolute bottom-0 left-0 right-0 h-px ${scrolled ? 'bg-[#A9825A]' : 'bg-white'}`} />
+                      <span className={`absolute bottom-0 left-0 right-0 h-px ${dDark ? 'bg-brass' : 'bg-white'}`} />
                     )}
                   </Link>
                 ))}
