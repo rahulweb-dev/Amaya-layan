@@ -24,10 +24,10 @@ export default function AmenitiesHero() {
       </div>
 
       <div className="relative z-10 text-center">
-        <h2 className="text-6xl md:text-8xl uppercase font-light text-navy">
+        <h2 className="text-[28px] md:text-[53px] uppercase font-light text-navy">
           Live At The Heart
         </h2>
-        <p className="max-w-2xl mx-auto mt-8 text-lg text-charcoal/60">
+        <p className="max-w-2xl mx-auto mt-8 text-[16px] md:text-[21px] text-charcoal/60">
           A self-sufficient urban cluster with world-class infrastructure.
         </p>
       </div>

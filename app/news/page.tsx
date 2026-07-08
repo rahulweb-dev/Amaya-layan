@@ -23,7 +23,7 @@ export default function NewsPage() {
           News &amp;<br />Updates
         </h1>
 
-        <p className="text-charcoal/55 font-light text-[14px] md:text-[15px] leading-[1.9] max-w-115 mb-16">
+        <p className="text-charcoal/55 font-light text-[16px] md:text-[21px] leading-[1.9] max-w-115 mb-16">
           Follow the progress of Amaya — construction milestones, design
           reveals, community updates, and exclusive events from Hyderabad&apos;s
           most anticipated senior living community.
@@ -62,8 +62,8 @@ export default function NewsPage() {
                 <span className="text-charcoal/40 text-[9px] uppercase tracking-[0.28em]">{tag}</span>
                 <span className="text-charcoal/30 text-[9px] tracking-[0.15em]">{date}</span>
               </div>
-              <h2 className="text-navy font-light text-[1.1rem] leading-[1.35]">{title}</h2>
-              <p className="text-charcoal/50 font-light text-[13px] leading-[1.8]">{excerpt}</p>
+              <h2 className="text-navy font-light text-[28px] md:text-[53px] leading-[1.35]">{title}</h2>
+              <p className="text-charcoal/50 font-light text-[16px] md:text-[21px] leading-[1.8]">{excerpt}</p>
               <span className="text-charcoal/35 text-[11px] uppercase tracking-[0.2em] mt-auto hover:text-brass transition-colors duration-200 cursor-pointer w-fit">
                 Read more →
               </span>

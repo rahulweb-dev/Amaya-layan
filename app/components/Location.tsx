@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -10,12 +10,19 @@ gsap.registerPlugin(ScrollTrigger);
 const LINE_LEN = 8; // SVG viewBox units (0-100), equals % of map width
 
 const STATS = [
-  { num: '15', line1: 'Minutes', line2: 'To Outer Ring Road' },
-  { num: '700', line1: 'Acre', line2: 'Reserve Forest' },
-  { num: '100+', line1: 'Curated', line2: 'Amenities Planned' },
+  { num: '04', line1: 'Minutes', line2: 'To ORR Service Road' },
+  { num: '10', line1: 'Minutes', line2: 'To ORR Exist 6' },
+  { num: '15', line1: 'Minutes', line2: 'To Medicity Hospital' },
 ];
 
-type Pin = { id: string; label: string; x: number; y: number; side: 'left' | 'right'; isMain?: boolean };
+type Pin = {
+  id: string;
+  label: string;
+  x: number;
+  y: number;
+  side: 'left' | 'right';
+  isMain?: boolean;
+};
 
 const MAP_PINS: Pin[] = [
   {
@@ -99,42 +106,56 @@ export default function Location() {
   const mainPin = MAP_PINS.find((p) => p.isMain)!;
 
   return (
-    <section ref={sectionRef} className='bg-navy overflow-hidden'>
-      <div className='grid grid-cols-1 md:grid-cols-[42%_58%] '>
-        {/* LEFT — text content */}
-        <div ref={leftRef} className='flex flex-col justify-center px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-20 md:py-28'>
-            <p className='loc-item text-white text-[11px] uppercase tracking-[0.38em] mb-5 md:mb-6'>
+    <section
+      ref={sectionRef}
+      className='relative bg-[#23384A] overflow-hidden'
+      style={{
+        backgroundImage: 'url(/images/location_page.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className='absolute inset-0 bg-gradient-to-b from-transparent  to-[#23384A] z-0 ' />
+      <div className='' />
+      <div className='grid grid-cols-1 md:grid-cols-2 '>
+        {/* LEFT — text content with bg image */}
+        <div
+          ref={leftRef}
+          className='relative md:ml-36 flex flex-col justify-center px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-20 md:py-28'
+        >
+          <div className='relative z-10'>
+            <p className='loc-item text-limestone text-[10px] md:text-[18px] uppercase tracking-[0.38em] mb-5 md:mb-6'>
               Location
             </p>
 
             <h2
-              className='loc-item text-limestone font-light leading-[1.05] tracking-[0.02em] mb-6 md:mb-8'
-              style={{ fontSize: 'clamp(2rem, 4.2vw, 5rem)' }}
+              className='loc-item text-limestone font-light uppercase leading-[1.05] tracking-[0.02em] mb-6 md:mb-8 text-[24px] md:text-[48px]'
+              // style={{ fontSize: 'clamp(2rem, 4.2vw, 5rem)' }}
             >
-              Beside a<br/> 700-Acre
+              Beside a 700-Acre
               <br />
-              Reserve Forest.
+              Reserve Forest
             </h2>
 
-            <p className='loc-item text-limestone/70 font-light text-[14px] md:text-[15px] xl:text-[16px] leading-[1.85] max-w-120 xl:max-w-135 mb-10 md:mb-12'>
+            <p className='loc-item text-limestone/70 font-light text-[13px] md:text-[18px] leading-[1.85] max-w-120 xl:max-w-135 mb-10 md:mb-12'>
               Adjacent to a 700-acre reserve forest in Medchal, around 15
               minutes from Nehru Outer Ring Road, Hyderabad. Nearby hospitals
-              and essential services. Easy access for visiting family.
+              and essential services. Easy access for visiting family
             </p>
 
             <div className='loc-item flex gap-10 md:gap-14 xl:gap-16 mb-12 md:mb-14'>
               {STATS.map(({ num, line1, line2 }) => (
                 <div key={line2}>
                   <div
-                    className='text-limestone font-light leading-none mb-2'
-                    style={{ fontSize: 'clamp(2.4rem, 4vw, 5rem)' }}
+                    className='text-limestone font-light leading-none mb-2 md:text-[48px] text-[34px]'
+                    // style={{ fontSize: 'clamp(2.4rem, 4vw, 5rem)' }}
                   >
                     {num}
                   </div>
-                  <div className='text-limestone/45 text-[9px] md:text-[10px] uppercase tracking-[0.22em] leading-[1.65]'>
+                  <div className='text-limestone/65 text-[9px] md:text-[18px]  leading-[1.5]'>
                     {line1}
                   </div>
-                  <div className='text-limestone/45 text-[9px] md:text-[10px] uppercase tracking-[0.22em]'>
+                  <div className='text-limestone/65 text-[9px] md:text-[16px] '>
                     {line2}
                   </div>
                 </div>
@@ -142,23 +163,26 @@ export default function Location() {
             </div>
 
             <div className='loc-item'>
-              <button className='group flex items-center gap-5 px-10 xl:px-12 h-13.5 xl:h-15 rounded-full bg-brass text-white uppercase text-[11px] xl:text-[12px] tracking-[0.24em] hover:bg-[#967043] transition-colors duration-300 font-normal'>
-                See Location Details
+              <button className='group flex items-center gap-5 px-10 xl:px-12 h-13.5 xl:h-15 rounded-full bg-brass hover:bg-[#f0e6d6] hover:text-brass text-limestone uppercase text-[11px] xl:text-[12px] tracking-[0.24em]  transition-colors duration-300 font-normal'>
+                See Location
                 <span className='text-base transition-transform duration-300 group-hover:translate-x-1'>
                   →
                 </span>
               </button>
             </div>
+          </div>
+          {/* end relative z-10 */}
         </div>
+        {/* end leftRef */}
 
         {/* RIGHT — full-height map */}
-        <div className='relative flex items-center justify-center bg-navy py-10 px-6 md:px-10 xl:px-14 min-h-125 md:min-h-0'>
+        <div className='relative flex items-center md:mt-16 justify-center py-10 px-6 md:px-10 xl:px-14 min-h-125 md:min-h-0 sm:block hidden'>
           <div
             ref={mapWrapRef}
             className='relative w-full max-w-140 xl:max-w-175 2xl:max-w-205'
           >
             <Image
-              src='/i/Website-Map-Small.png'
+              src='/images/Website_Map_Small.png'
               alt='Hyderabad area map'
               width={820}
               height={820}
@@ -174,12 +198,18 @@ export default function Location() {
               {/* Secondary pin lines */}
               {MAP_PINS.map((pin, i) => {
                 if (pin.isMain) return null;
-                const x2 = pin.side === 'left' ? pin.x - LINE_LEN : pin.x + LINE_LEN;
+                const x2 =
+                  pin.side === 'left' ? pin.x - LINE_LEN : pin.x + LINE_LEN;
                 return (
                   <line
                     key={pin.id}
-                    ref={(el) => { lineRefs.current[i] = el; }}
-                    x1={pin.x} y1={pin.y} x2={x2} y2={pin.y}
+                    ref={(el) => {
+                      lineRefs.current[i] = el;
+                    }}
+                    x1={pin.x}
+                    y1={pin.y}
+                    x2={x2}
+                    y2={pin.y}
                     stroke='rgba(231,216,198,0.35)'
                     strokeWidth='0.25'
                     vectorEffect='non-scaling-stroke'
@@ -188,10 +218,16 @@ export default function Location() {
               })}
               {/* Main (brass) line — direction follows mainPin.side */}
               <line
-                ref={(el) => { lineRefs.current[MAP_PINS.length] = el; }}
+                ref={(el) => {
+                  lineRefs.current[MAP_PINS.length] = el;
+                }}
                 x1={mainPin.x}
                 y1={mainPin.y}
-                x2={mainPin.side === 'left' ? mainPin.x - LINE_LEN : mainPin.x + LINE_LEN}
+                x2={
+                  mainPin.side === 'left'
+                    ? mainPin.x - LINE_LEN
+                    : mainPin.x + LINE_LEN
+                }
                 y2={mainPin.y}
                 stroke='rgba(169,130,90,0.8)'
                 strokeWidth='0.3'
@@ -201,24 +237,34 @@ export default function Location() {
 
             {/* Dot + label — label positioned at the LINE ENDPOINT, not the dot */}
             {MAP_PINS.map((pin, i) => {
-              const lineEnd = pin.side === 'left' ? pin.x - LINE_LEN : pin.x + LINE_LEN;
+              const lineEnd =
+                pin.side === 'left' ? pin.x - LINE_LEN : pin.x + LINE_LEN;
               return (
                 <div key={pin.id}>
                   {/* Dot (secondary pins only) */}
                   {!pin.isMain && (
                     <div
                       className='absolute w-1.25 h-1.25 rounded-full bg-limestone/50'
-                      style={{ left: `${pin.x}%`, top: `${pin.y}%`, transform: 'translate(-50%, -50%)' }}
+                      style={{
+                        left: `${pin.x}%`,
+                        top: `${pin.y}%`,
+                        transform: 'translate(-50%, -50%)',
+                      }}
                     />
                   )}
                   {/* Label at line endpoint */}
                   <div
-                    ref={(el) => { labelRefs.current[i] = el; }}
+                    ref={(el) => {
+                      labelRefs.current[i] = el;
+                    }}
                     className='absolute'
                     style={{
                       left: `${lineEnd}%`,
                       top: `${pin.y}%`,
-                      transform: pin.side === 'left' ? 'translate(-100%, -50%)' : 'translate(0, -50%)',
+                      transform:
+                        pin.side === 'left'
+                          ? 'translate(-100%, -50%)'
+                          : 'translate(0, -50%)',
                     }}
                   >
                     <span

@@ -29,9 +29,24 @@ export default function PageHero({
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const els = contentRef.current ? Array.from(contentRef.current.children) : [];
+    const container = contentRef.current;
+    const els = container ? Array.from(container.children) : [];
     if (!els.length) return;
-    gsap.from(els, { y: 40, opacity: 0, duration: 1.15, stagger: 0.14, ease: 'power3.out', delay: 0.25 });
+    gsap.set(container, { opacity: 1 });
+    gsap.set(els, { y: 40, opacity: 0 });
+    const tween = gsap.to(els, {
+      y: 0,
+      opacity: 1,
+      duration: 1.15,
+      stagger: 0.14,
+      ease: 'power3.out',
+      delay: 0.2,
+    });
+    return () => {
+      tween.kill();
+      gsap.set(els, { clearProps: 'all' });
+      gsap.set(container, { clearProps: 'opacity' });
+    };
   }, []);
 
   const alignClass = align === 'left'
@@ -47,18 +62,19 @@ export default function PageHero({
       <div
         ref={contentRef}
         className={`absolute inset-0 flex flex-col justify-center gap-5 ${alignClass} max-w-425 mx-auto`}
+        style={{ opacity: 0 }}
       >
         {label && (
-          <p className="text-limestone/50 text-[11px] uppercase tracking-[0.45em]">{label}</p>
+          <p className="text-limestone/50 text-[16px] md:text-[21px] uppercase tracking-[0.45em]">{label}</p>
         )}
         <h1
-          className="text-limestone font-light leading-[1.03] tracking-wide max-w-4xl"
-          style={{ fontSize: 'clamp(2.2rem, 5.5vw, 6.5rem)' }}
+          className="text-limestone font-light leading-[1.03] tracking-wide max-w-4xl text-[64px]"
+          // style={{ fontSize: 'clamp(2.2rem, 5.5vw, 6.5rem)' }}
         >
           {title}
         </h1>
         {description && (
-          <p className="text-limestone/60 font-light text-[14px] md:text-[16px] leading-[1.85] max-w-125">
+          <p className="text-limestone/60 font-light text-[16px] md:text-[21px] leading-[1.85] max-w-125">
             {description}
           </p>
         )}

@@ -26,7 +26,7 @@ export default function AmenitiesAccordion() {
               text-left
             "
           >
-            <h3 className="text-3xl md:text-5xl uppercase font-light text-navy">
+            <h3 className="text-[16px] md:text-[21px] uppercase font-light text-navy">
               {item.title}
             </h3>
             <span className="text-3xl text-charcoal/50">
@@ -51,7 +51,7 @@ export default function AmenitiesAccordion() {
                 <h4 className="text-2xl uppercase mb-4 text-navy">
                   {item.subtitle}
                 </h4>
-                <p className="leading-8 text-lg text-charcoal/65">
+                <p className="leading-8 text-[16px] md:text-[21px] text-charcoal/65">
                   {item.description}
                 </p>
               </div>

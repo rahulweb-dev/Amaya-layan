@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function Preloader() {
   const [progress, setProgress] = useState(0);
@@ -29,13 +29,11 @@ export default function Preloader() {
   if (hide) return null;
 
   return (
-    <div className="fixed inset-0 bg-[#021A13] z-[9999] flex items-center justify-center">
-      <div className="text-center text-white">
-        <h2 className="text-4xl mb-4">
-          LAYAN VERDE
-        </h2>
+    <div className='fixed inset-0 bg-[#021A13] z-[9999] flex items-center justify-center'>
+      <div className='text-center text-limestone'>
+        <h2 className='text-4xl mb-4'>LAYAN VERDE</h2>
 
-        <div className="text-xl">{progress}%</div>
+        <div className='text-xl'>{progress}%</div>
       </div>
     </div>
   );

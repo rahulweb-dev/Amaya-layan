@@ -24,7 +24,7 @@ const TEAMS = [
       label: 'Key Highlights',
       items: ['256 Residences planned', '34,000 sq ft Club Amaya', '700-Acre Reserve Forest adjoining', '100+ Curated Amenities (planned)'],
     },
-    image: '/i/investment/management.jpg',
+    image: '/images/social-lounge.jpg',
   },
   {
     id: 'clubamaya',
@@ -42,7 +42,7 @@ const TEAMS = [
       label: 'Clubhouse Spaces',
       items: ['Dining and social spaces', 'Library and reading rooms', 'Wellness and therapy rooms', 'Fitness and movement spaces', 'Arts and activity studios'],
     },
-    image: '/i/investment/la-green.jpg',
+    image: '/images/courtyard-pool.jpg',
   },
 ];
 
@@ -115,7 +115,7 @@ export default function ProjectTeam() {
           </h2>
 
           <div ref={paraRef} className="flex items-center md:pt-4">
-            <p className="text-charcoal/60 font-light text-[14px] md:text-[15px] leading-[1.95] max-w-120 text-center md:text-left mx-auto md:mx-0">
+            <p className="text-charcoal/60 font-light text-[19px] leading-[1.95] max-w-120 text-center md:text-left mx-auto md:mx-0">
               Amaya is thoughtfully conceived by Vera Vita Developments, a team of
               senior living specialists dedicated to creating residential communities
               where independence is beautifully supported. Every detail — from the
@@ -205,7 +205,7 @@ export default function ProjectTeam() {
                     >
                       {team.company}
                     </h4>
-                    <p className="text-charcoal/65 font-light text-[14px] md:text-[15px]">
+                    <p className="text-charcoal/65 font-light text-[19px]">
                       {team.role}
                     </p>
                   </div>
