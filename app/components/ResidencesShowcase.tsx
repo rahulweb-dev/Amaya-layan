@@ -15,8 +15,7 @@ export default function ResidencesShowcase() {
       <div className='max-w-7xl mx-auto px-6 md:px-12 lg:px-20'>
         {/* Heading — all screens */}
         <h2 className='text-[#10211D] uppercase font-light tracking-[0.12em] leading-[1.15] text-[28px] md:text-[48px] max-w-[620px] mb-8 md:mb-10 lg:mb-14'>
-         Homes That  Feel<br />
-        Exactly  Like Home
+         Homes That  Breath
         </h2>
 
         {/* ── MOBILE LAYOUT (hidden on md+) ── */}

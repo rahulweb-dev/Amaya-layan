@@ -129,7 +129,7 @@ export default function Location() {
             </p>
 
             <h2
-              className='loc-item text-limestone font-light uppercase leading-[1.05] tracking-[0.02em] mb-6 md:mb-8 text-[24px] md:text-[48px]'
+              className='loc-item text-limestone font-light uppercase leading-[1.05] tracking-[0.02em] mb-6 md:mb-8 text-[28px] md:text-[48px]'
               // style={{ fontSize: 'clamp(2rem, 4.2vw, 5rem)' }}
             >
               Beside a 700-Acre
@@ -137,7 +137,7 @@ export default function Location() {
               Reserve Forest
             </h2>
 
-            <p className='loc-item text-limestone/70 font-light text-[13px] md:text-[18px] leading-[1.85] max-w-120 xl:max-w-135 mb-10 md:mb-12'>
+            <p className='loc-item text-limestone/70 font-light text-[16px] md:text-[18px] leading-normal max-w-120 xl:max-w-135 mb-10 md:mb-12'>
               Adjacent to a 700-acre reserve forest in Medchal, around 15
               minutes from Nehru Outer Ring Road, Hyderabad. Nearby hospitals
               and essential services. Easy access for visiting family
@@ -152,10 +152,10 @@ export default function Location() {
                   >
                     {num}
                   </div>
-                  <div className='text-limestone/65 text-[9px] md:text-[18px]  leading-[1.5]'>
+                  <div className='text-limestone/65 text-[12px] md:text-[18px]  leading-[1.5]'>
                     {line1}
                   </div>
-                  <div className='text-limestone/65 text-[9px] md:text-[16px] '>
+                  <div className='text-limestone/65 text-[12px] md:text-[16px] '>
                     {line2}
                   </div>
                 </div>
