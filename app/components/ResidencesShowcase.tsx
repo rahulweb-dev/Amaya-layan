@@ -44,7 +44,7 @@ export default function ResidencesShowcase() {
                 sizes='50vw'
               />
             </div>
-            <div className='relative aspect-4/3 overflow-hidden mt-10'>
+            <div className='relative aspect-4/3 overflow-hidden mt-10 hidden sm:block'>
               <Image
                 src='/images/cards-room.png'
                 alt='Living Room'

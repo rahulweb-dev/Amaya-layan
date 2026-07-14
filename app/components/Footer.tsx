@@ -36,23 +36,23 @@ export default function Footer() {
 
   return (
     <footer ref={footerRef} className='bg-[#23384A] overflow-hidden'>
-      <div className='grid grid-cols-2    '>
+      <div className='grid grid-cols-1 md:grid-cols-2'>
         {/* ── LEFT — Contact & Legal ── */}
         <div
           ref={leftRef}
-          className='w-full shrink-0 flex flex-col gap-7 px-10 md:px-14 lg:px-16 xl:px-24 py-14 md:py-16 xl:py-24 md:border-r border-limestone/10'
+          className='w-full shrink-0 flex flex-col gap-7 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-24 py-10 sm:py-14 md:py-16 xl:py-24 md:border-r border-limestone/10'
         >
           {/* Phone */}
           <div className='flex flex-col gap-[6px]'>
             <a
               href='#'
-              className='text-limestone/55 text-[16px] uppercase underline underline-offset-4 decoration-limestone/20 hover:text-limestone hover:decoration-limestone/50 transition-colors duration-300 w-fit'
+              className='text-limestone/55 text-[14px] sm:text-[16px] uppercase underline underline-offset-4 decoration-limestone/20 hover:text-limestone hover:decoration-limestone/50 transition-colors duration-300 w-fit'
             >
               Schedule a call
             </a>{' '}
             <a
               href='tel:+918712425242'
-              className='text-limestone font-light text-[34px] md:text-[43px] tracking-tight leading-none hover:text-limestone/80 transition-colors duration-300'
+              className='text-limestone font-light text-[26px] sm:text-[34px] md:text-[43px] tracking-tight leading-none hover:text-limestone/80 transition-colors duration-300 wrap-break-word'
             >
               +91 87124 25242
             </a>
@@ -60,10 +60,10 @@ export default function Footer() {
 
           {/* Experience centre */}
           <div className='flex flex-col gap-[6px]'>
-            <h4 className='text-limestone text-[28px] uppercase  mb-1'>
+            <h4 className='text-limestone text-[22px] sm:text-[28px] uppercase  mb-1'>
               Experience Centre
             </h4>
-            <p className='text-limestone/90 text-[19px] font-light leading-[1.85]'>
+            <p className='text-limestone/90 text-[15px] sm:text-[19px] font-light leading-[1.85]'>
               Monday to Saturday, 10:00 to 18:00
               <br />
               Medchal, Hyderabad
@@ -77,7 +77,7 @@ export default function Footer() {
             href='https://maps.google.com/?q=Medchal,+Nehru+Outer+Ring+Road,+Hyderabad,+Telangana'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-limestone/90 text-[19px] font-light leading-[1.75] underline underline-offset-4 decoration-limestone/20 hover:text-limestone hover:decoration-limestone/45 transition-colors duration-300 w-fit'
+            className='text-limestone/90 text-[15px] sm:text-[19px] font-light leading-[1.75] underline underline-offset-4 decoration-limestone/20 hover:text-limestone hover:decoration-limestone/45 transition-colors duration-300 w-fit'
           >
             Medchal, Nehru Outer Ring Road,
             <br />
@@ -85,7 +85,7 @@ export default function Footer() {
           </a>
 
           {/* Social icons */}
-          <div className='flex items-center gap-2.5'>
+          <div className='flex items-center gap-2.5 flex-wrap'>
             <a
               href='#'
               aria-label='Instagram'
@@ -186,7 +186,7 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom bar — full width ── */}
-      <div className='border-t border-limestone/12 px-10 md:px-14 lg:px-16 xl:px-24 py-4 flex flex-col sm:flex-row items-center justify-between gap-2'>
+      <div className='border-t border-limestone/12 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-24 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-center'>
         <div className='flex items-center gap-4 flex-wrap'>
           <a
             href='#'
